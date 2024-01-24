@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Intro to CSS</title>
+    <style>
+      body {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+      .left-container {
+        flex-basis: 60%;
+      }
+
+      pre {
+        flex-basis: 40%;
+      }
+
+      div {
+        height: 100px;
+        background-color: red;
+        font-size: 15px;
+      }
+
+      #id3 {
+        background-color: olive;
+      }
+      
+      .class1 {
+        color: white;
+        background-color: blue;
+      }
+      
+      .class2 {
+        color: black;
+        background-color: purple;
+      }
+
+      #id1 {
+        background-color: bisque;
+      }
+
+      #id2 {
+        background-color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="left-container">
+      <div>This is an empty div</div>
+      <div class="class1">
+        <p>This is a styled Div with class="class1"</p>
+      </div>
+      <div class="class2">
+        <p>This is a styled Div with class="class2"</p>
+      </div>
+      <div id="id1">
+        <p>This is a styled Div with id="id1"</p>
+      </div>
+      <div id="id2">
+        <p>This is a styled Div with id="id2"</p>
+      </div>
+      <div class="class1 class2">
+        <p>This is a styled Div with class="class1 class2"</p>
+      </div>
+      <div class="class2 class1">
+        <p>This is a styled Div with class="class2 class1"</p>
+      </div>
+      <div class="class1 class2" id="id3">
+        <p>This is a styled Div with class="class1 class2" AND id="id3"</p>
+      </div>
+    </main>
+
+    <pre
+>
+  body {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .left-container {
+    flex-basis: 60%;
+  }
+
+  pre {
+    flex-basis: 40%;
+  }
+
+  div {
+    height: 100px;
+    background-color: red;
+    font-size: 15px;
+  }
+
+  #id3 {
+    background-color: olive;
+  }
+
+  .class1 {
+    color: white;
+    background-color: blue;
+  }
+
+  .class2 {
+    color: black;
+    background-color: purple;
+  }
+
+  #id1 {
+    background-color: bisque;
+  }
+
+  #id2 {
+    background-color: green;
+  }
+    </pre>
+  </body>
+</html>

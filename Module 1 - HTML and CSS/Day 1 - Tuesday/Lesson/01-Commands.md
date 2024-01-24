@@ -1,13 +1,3 @@
-## HTML/CSS Resources
-
-- https://www.w3schools.com
-- https://developer.mozilla.org/en-US/docs/Web/HTML (HTML)
-- https://developer.mozilla.org/en-US/docs/Web/CSS (CSS)
-
-## JavaScript Resources
-
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript
-
 ## To download these files:
 
 Open the terminal:
@@ -25,6 +15,8 @@ To run .html files:
 1. Click the triangle "play" button to the left of the files
 2. Click "Run and Debug"
 3. Click "Web App (Chrome)" if it asks for a debugger
+
+(Shortcut) You can press F5 to run it instead of clicking the "play" button
 
 To save the code (you'll have to do this every time you make changes):
 

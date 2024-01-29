@@ -2,13 +2,15 @@
 
 Open the terminal:
 
-1. Hold Control and tilde (to the left of the 1 key)
+1. Hold Control and tilde (to the left of the 1 key).
 
 In the terminal, type these commands (press enter after each command):
 1. git clone https://github.com/MUCodeAcademy/ReEntryCode-C1
-2. cd ReEntryCode-C1
-3. code .
-4. If it asks you if you want to "trust authors", press "y" on your keyboard
+2. On the top right of Visual Studio, click File > Open Folder
+3. On the left sidebar, find to Local Drive (C) and click it.
+4. Double click the "Users" folder to open it.
+5. Double click the "Midland Code" folder to open it.
+6. If it asks you if you want to "trust authors", press "y" on your keyboard
 
 To run .html files:
 

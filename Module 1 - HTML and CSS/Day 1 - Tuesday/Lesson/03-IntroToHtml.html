@@ -7,34 +7,12 @@
       name="description"
       content="An introduction to HTML and what it's basic structure."
     />
-    <!--Whether engines should add this to a page or not (nofollow is this page but no links, noindex means it shouldn't be-->
-    <!--added at all--> 
-    <meta name="robots" content="noindex" />
-    <!--Sets the viewport for mobile devices so that the webpage fits on the screen-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!--The title is what displays in the tab of the browser-->
     <title>Intro To HTML: It's not too bad...</title>
 
+    <!-- Tells the site what CSS page we want to use -->
     <link rel="stylesheet" type="text/css" href="basicCSSOverview.css" />
-
-    <style> /* This is called inline CSS, we'll talk about this a bit later */
-      #babyBearPic {
-        cursor: pointer;
-      }
-
-      .redText {
-        color: red;
-      }
-
-      .blueText {
-        color: blue;
-      }
-
-      .center {
-        text-align: center;
-      }
-    </style>
   </head>
   <body>
     <hr /> <!-- "Horizontal Rule" -->
@@ -121,24 +99,6 @@
           <li>Fourth item in a list</li>
         </ul>
       </article>
-
-      <article>
-        You can even nest lists!
-        <ol>
-          <li>
-            <ul>
-              <li>Like</li>
-              <li>This</li>
-            </ul>
-          </li>
-          <li>
-            <ol>
-              <li>Or</li>
-              <li>This</li>
-            </ol>
-          </li>
-        </ol>
-      </article>
     </section>
     <hr />
     <section class="container">
@@ -151,7 +111,6 @@
       <p>
         In this paragraph you'll see some of the options. You can use
         <b> a b tag for bold text </b>,
-
         <em>the em tag for things you want to put emphasis on</em>, or
         <strong> strong for increased emphasis </strong> of course, these are
         <sup>only</sup> <sub>a few</sub> of the ones available.
@@ -177,7 +136,7 @@
         src="Bear_Roar.webp"
         title="Angry Bear"
         alt="Scary Bear Picture"
-        id="babyBearPic"
+        id="bearPic"
         style="display: block; margin: auto"
       />
     </section>
@@ -197,17 +156,17 @@
     </footer>
 
     <script>
-      var bear = document.getElementById("babyBearPic");
-      var numClicked = 0;
+      let bear = document.getElementById("bearPic");
+      let numClicked = 0;
       function bearClick() {
         numClicked++;
-        console.log("You've clicked the baby bear " + numClicked + " times");
+        console.log("You've clicked the bear " + numClicked + " times");
         if (numClicked < 0) {
-          ""
+          "";
         } else {
-          alert("RAWR I'm a baby bear!!");
+          alert("ROAR!!");
         }
-        numClicked < 0 ? "" : alert("RAWR I'm a baby bear!!");
+        numClicked < 0 ? "" : alert("ROAR!!");
       }
       bear.addEventListener("click", bearClick);
     </script>

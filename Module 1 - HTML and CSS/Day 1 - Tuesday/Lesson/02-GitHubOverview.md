@@ -1,6 +1,6 @@
 # Introduction to Git and GitHub
 
-We will need Git for this course as it will be used extensively. It should already be installed on your computers.
+We will need use Git for this course as it is used commonly in the industry. It should already be installed on your computers.
 
 ## What is Version Control?
 
@@ -14,8 +14,6 @@ We will need Git for this course as it will be used extensively. It should alrea
 - Git is a software to allow for better version control
 - Can be utilized through the command line, but also through the use of applications such as GitHub Desktop.
 - Generally speaking is the go to VCS utility for a majority of tech companies.
-
-![Git Diagram](gitExample.jpg)
 
 ## What is GitHub
 

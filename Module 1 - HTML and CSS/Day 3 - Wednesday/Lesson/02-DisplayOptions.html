@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Display Options</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: #0000ff;
+        color: white;
+        margin: 2px auto;
+      }
+      button {
+        margin: 0;
+        width: 24%;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!--
+      Definitions:
+
+      Inline: Displays an element as an inline element. 
+      Any height and width properties will have no effect.
+
+      Inline-block: Displays an element as an inline-level block container. 
+      You CAN set height and width values.
+
+      Block: Displays an element as a block-level element. 
+      Starts on a new line and takes up the full width available.
+
+    -->
+    
+    <button onclick="changeStyle('block');">Block</button>
+    <button onclick="changeStyle('inline-block');">Inline-block</button>
+    <button onclick="changeStyle('inline');">Inline</button>
+    <button onclick="changeStyle('none');">None</button><br />
+    <div>This is a div</div>
+    <div>This is a div</div>
+    <div>This is a div</div>
+    <div>This is a div</div>
+    <div>This is a div</div>
+    <div>This is a div</div>
+    <div>This is a div</div>
+    <div>This is a div</div>
+    <div>This is a div</div>
+    <hr />
+    <p>This is the end of the page!</p>
+    <script>
+      function changeStyle(val) {
+        var divs = document.getElementsByTagName("div");
+        for (var i = 0; i < divs.length; i++) {
+          divs[i].style.display = val;
+        }
+      }
+    </script>
+  </body>
+</html>

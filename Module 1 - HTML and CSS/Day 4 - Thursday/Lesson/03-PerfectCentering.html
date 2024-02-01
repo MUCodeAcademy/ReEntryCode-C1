@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+          To center all flex items, set justify-content and align-items to center
+        */
+        .flex-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 300px;
+          background-color: rgb(255, 86, 86);
+        }
+        
+        .flex-container > div {
+          text-align: center;
+          background-color: rgb(135, 135, 229); 
+          padding: 20px;
+          margin: 10px;
+          width: 100px;
+          height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+</html>

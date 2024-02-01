@@ -1,0 +1,110 @@
+<!-- Below is an example of improper use of DRY Practices, taking what you know, fix the CSS AND the HTML to follow DRY practices-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DRY CSS</title>
+    <style>
+      * {
+        color: white;
+      }
+
+      div {
+        display: inline-block;
+        margin: 5px;
+      }
+
+      div:nth-child(1n + 6) {
+        width: 150px;
+        height: 150px;
+        line-height: 150px;
+      }
+      div:nth-child(-1n + 5) {
+        height: 200px;
+        width: 200px;
+        line-height: 200px;
+      }
+
+      .top-heading {
+        text-align: center;
+        background-color: #ffa500;
+      }
+
+      .bottom-heading {
+        text-align: right;
+        background-color: #0088ff;
+      }
+      .div1 {
+        border: 1px solid black;
+        text-align: center;
+        background-color: #ffa500;
+      }
+      .div2 {
+        border: 2px solid red;
+        text-align: center;
+        background-color: #ffa500;
+        border-radius: 10px;
+      }
+
+      .div3 {
+        border: 2px solid black;
+        text-align: center;
+        background-color: #0088ff;
+        border-radius: 10px;
+      }
+
+      .div4 { 
+        text-align: right;
+        background-color: #0088ff;
+      }
+    
+      /* NEW VERSION */
+      .orange {
+        background-color: orange;
+      }
+
+      .center {
+        text-align: center;
+      }
+
+      .border-radius {
+        border-radius: 10px;
+      }
+
+      .border-1px-black {
+        border: 1px solid black;
+      }
+
+      .border-2px-black {
+        border: 2px solid black;
+      }
+
+      .border-2px-red {
+        border: 2px solid red;
+      }
+
+      .blue {
+        background-color: #0088ff;
+      }
+
+      .right {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 class="center orange">DRY CSS</h3>
+    <div class="border-1px-black center orange">Div 1</div>
+    <div class="border-1px-black center orange">Div 2</div>
+    <div class="border-2px-red border-radius center orange">Div 3</div>
+    <div class="border-2px-red border-radius center orange">Div 4</div>
+    <div class="border-2px-black border-radius center blue">Div 5</div>
+    <div class="border-2px-black border-radius center blue">Div 6</div>
+    <div class="border-2px-black border-radius center blue">Div 7</div>
+    <div class="right blue">Div 8</div>
+    <div class="right blue">Div 9</div>
+    <div class="right blue">Div 10</div>
+    <h3 class="right blue">What can we fix?</h3>
+  </body>
+</html>

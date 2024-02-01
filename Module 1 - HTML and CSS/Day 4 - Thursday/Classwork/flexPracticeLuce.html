@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        text-align: center;
+        color: white;
+      }
+
+      .header-footer {
+        height: 50px;
+        line-height: 50px;
+        background-color: black;
+      }
+
+      .main-container {
+        display: flex;
+        flex-flow: row wrap;
+        /* flex-direction: row; */
+        /* flex-wrap: wrap; */
+      }
+
+      .blue-container {
+        display: flex;
+        flex-flow: row wrap;
+        flex-basis: calc(100% / 3 * 2);
+      }
+
+      .red-container {
+        display: flex;
+        flex-flow: column wrap;
+        flex-basis: calc(100% / 3);
+      }
+
+      .blue-box {
+        background-color: blue;
+        margin: 2px;
+        flex: 0 1 calc(100% / 3 - 4px);
+        /* flex-grow: 1; */
+        /* flex-shrink: 1; */
+        /* flex-basis: calc(100% / 3 - 4px);; */
+      }
+
+      .red-box {
+        background-color: red;
+        margin: 2px;
+        min-height: 100px;
+      }
+
+      .order-1 {
+        order: 1;
+      }
+
+      .order-2 {
+        order: 2;
+      }
+
+      .order-3 {
+        order: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header-footer">HEADER</header>
+    <div class="main-container">
+      <main class="blue-container">
+        <div class="blue-box">1</div>
+        <div class="blue-box order-1">2</div>
+        <div class="blue-box order-3">3</div>
+        <div class="blue-box order-2">4</div>
+        <div class="blue-box order-1">5</div>
+        <div class="blue-box">6</div>
+      </main>
+      <aside class="red-container">
+        <div class="red-box order-1">1</div>
+        <div class="red-box">2</div>
+        <div class="red-box">3</div>
+      </aside>
+    </div>
+    <footer class="header-footer">FOOTER</footer>
+  </body>
+</html>

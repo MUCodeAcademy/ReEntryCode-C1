@@ -30,3 +30,9 @@ All pages should have the same menu and footer styled as follows:
 
 - The Footer should have your company information (can be filler or made up) and include an image.
 - Styling should be however you see fit but there should be whitespace between the body content and the footer
+
+## To use the pictures
+
+You'll need to specify that they're in the Pictures folder, so they will be written like this:
+
+<img src="Pictures/fish2.jpg" />

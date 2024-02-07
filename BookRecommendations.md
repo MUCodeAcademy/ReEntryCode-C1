@@ -8,6 +8,14 @@ Publication Date: December 2021
 
 Length: 580
 
+**Murach's JavaScript and JQuery (4th Edition)** by Mary Delamater Zak Ruvalcaba
+
+ISBN: 978-1-943872-62-6
+
+Publication Date: September 2020
+
+Length: 711
+
 **Intro to Algorithms 4th Edition** by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Clifford Stein.
 
 ISBN-10: 026204630X

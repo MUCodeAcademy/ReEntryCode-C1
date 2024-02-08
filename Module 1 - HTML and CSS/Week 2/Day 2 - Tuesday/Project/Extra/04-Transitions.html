@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Transitions</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lacquer|Saira+Stencil+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      div {
+        flex-basis: calc(25% - 12px);
+        height: 200px;
+        background-color: #0088ff;
+        font-size: 20px;
+        line-height: 200px;
+        text-align: center;
+        margin: 5px;
+        color: white;
+        border: 1px solid black;
+      }
+
+      div {
+        font-family: "Saira Stencil One", cursive;
+        /* Says we want to apply the transition to all properties when their values change */
+        transition-property: all;
+
+        transition-delay: 500ms;
+
+        transition-duration: 1s;
+
+        /*linear, ease, ease-in, ease-out, ease-in-out, steps, cubic-bezier(n,n,n,n)
+        -webkit-transition-timing-function: ease-in-out;*/
+        transition-timing-function: linear;
+
+        /*SHORTHAND
+        transition: property duration timing-function delay
+        above example would be:
+        transition: all 1s linear 500ms;
+        Properties you can transition:
+        https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
+        */
+      }
+
+      .translate:hover {
+        font-family: "Lacquer", sans-serif;
+
+        transform: translate(20px, 20px);
+      }
+      .rotate:hover {
+        background-color: orange;
+
+        transform: rotate(45deg);
+      }
+      .scale:hover {
+        transform: scale(1.5, 2);
+      }
+
+      .skew-x:hover {
+        transform: skewX(35deg);
+      }
+
+      .skew-y:hover {
+        transform: skewY(35deg);
+      }
+      .skew:hover {
+        transform: skew(35deg, 25deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="rotate">Rotate</div>
+    <div class="translate">Translate</div>
+    <div class="scale">Scale</div>
+    <div class="skew-x">Skew X</div>
+    <div class="skew-y">Skew Y</div>
+    <div class="skew">Skew</div>
+  </body>
+</html>

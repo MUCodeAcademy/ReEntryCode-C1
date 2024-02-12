@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro To JS</title>
+  </head>
+
+  <body>
+    <h1>Using Javascript</h1>
+
+    <!--External file link-->
+    <!-- You would want to put this at the end of the <body> tag -->
+    <script src="01-IntroToJS.js"></script>
+    <!-- If you want to write JavaScript in an HTML file, write it between script tags -->
+    <script>
+      //  Using the console
+      console.log("Logging information to the console");
+      console.error("Error message");
+      console.warn("WARNING DANGER HELP");
+      console.info("Here's some information for you!");
+      // alert('This is an alert!');
+      //  Variable Declaration
+      const thisIsAConstant = 1; //This will not be reassigned
+      let yearNumber = 2023; //This may be reassigned
+      let yearString = "2023"; //not the same as yearNumber
+      console.log(yearNumber);
+      console.log(yearString);
+
+      let thePrompt = prompt("Enter a random string of letters...");
+      console.log(thePrompt);
+
+      // PRIMITIVE TYPES (different types of variables)
+      // integer (1)
+      // float or double (1.23)
+      // string ("word")
+      // boolean (true/false)
+      // undefined (variables that have no value)
+      // null (variables that intentionally have no value)
+
+      let x; // This is undefined
+      let y = null; // This is null
+
+      // Types are dynamic in JavaScript, meaning they can be reassigned to a different type 
+      // (this is not true in all programming languages)
+
+      data = 13; // data is initialized as an integer
+      data = "word"; // data is now a string
+      data = true; // data is now a boolean
+
+      //  Changing a variable after the fact.
+      yearNumber = 2024;
+      console.log(yearNumber);
+
+      //  Array object
+      //                      0       1          2        3
+      let typesOfBears = ["Grizzly", "Black", "Brown", "Polar"];
+      let dogs = ["Husky", "Bulldog", "Beagle"];
+      console.log(dogs[0]);
+      //  Zero Indexed (position)
+
+      let firstDog = dogs[0]; // dogs[0] --> "Husky"
+      let secondBear = typesOfBears[2]; // typesOfBears[2] --> "Brown"
+
+      // Arrays don't care about type in JavaScript
+      let variedArray = [1, 2, true, [4, 5], 6, "number 7", undefined];
+
+      // Objects
+      let carObject = {
+        color: "Gray",
+        weight: "1000kg",
+      };
+
+      // Logs the entire object
+      console.log(carObject);
+      // Logs a specific property
+      console.log(carObject.color);
+
+      //Objects with multiple types
+      let johnnyDangerously = {
+        genre: "Comedy",
+        yearReleased: 1984,
+        cast: ["Michael Keaton", "Joe Piscopo", "Marilu Henner"],
+        financials: {
+          budget: "9 Million",
+          "Box Office": "17.1 Million",
+        },
+      };
+
+      console.log(johnnyDangerously);
+      
+      console.log(johnnyDangerously.genre);
+
+      console.log(johnnyDangerously.financials.budget);
+      
+      johnnyDangerously.director = "Amy Heckerling";
+
+      //simple math
+      let two = 2;
+      let three = 3;
+
+      let five = 2 + 3;
+      let alsoFive = two + three; // 2 + 3
+
+      let six = 2 * 3;
+      let alsoSix = two * three;
+
+      three++; //adds 1
+      three+=1; //adds 1
+      three--; //substracts 1
+
+      console.log(six / three); // 2
+      console.log(six - three); // 3
+
+      //MODULO!
+      let sixModuleThree = 6 % 3;
+      let fiveModuleThree = five % three; // 0
+
+      //String concatenation (addition)
+      let firstName = "Justin";
+      let lastName = "Luce";
+      let fullName = firstName + lastName; // "JustinLuce"
+
+      let fullNameWithSpace = firstName + " " + lastName + " is my name"; // "Justin Luce is my name"
+
+      // This is the preferred method
+      let fullNameStringLiteral = `${firstName} ${lastName} is my name`; // "Justin Luce is my name"
+    </script>
+  </body>
+</html>

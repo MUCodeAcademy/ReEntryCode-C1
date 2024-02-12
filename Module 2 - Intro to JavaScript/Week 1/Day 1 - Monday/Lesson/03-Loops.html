@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loops</title>
+  </head>
+  <body>
+      <h2>Let's take a look at some loops and see what they do.</h3>
+    <script>
+      // For Loops. They're the bread and butter of loops. We'll see some better ways to handle similar logic later.
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+      }
+      // Careful of infinite loops
+        //  for(let i = 1; i>0; i++){
+        //      console.log(i)
+        //  }
+
+      // Nested for loops
+      for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 6; j++) {
+          console.log(`i:${i}, j:${j}`);
+        }
+      }
+
+      let a = [4, 7, 5, 9, 10];
+      for (let i = 0; i < a.length; i++) {
+        console.log(a[i], i); // what's i? i = 0 therefore a[0]
+      }
+
+      // While loops
+      let whileVariable = 10;
+      while (whileVariable > 0) {
+        console.log(`First while Loop: ${whileVariable}`);
+        whileVariable = whileVariable - 1; // or whileVariable--;
+      }
+
+      console.log(whileVariable);
+      while (whileVariable > 10) {
+        console.log("Second while Loop:" + whileVariable);
+        whileVariable = whileVariable - 1; // or whileVariable--;
+      }
+
+      // whileVariable = 12;
+      do {
+        console.log("Do while Loop:" + whileVariable);
+        whileVariable = whileVariable - 1; // or whileVariable--;
+      } while (whileVariable > 10);
+      console.log(whileVariable);
+    </script>
+  </body>
+</html>

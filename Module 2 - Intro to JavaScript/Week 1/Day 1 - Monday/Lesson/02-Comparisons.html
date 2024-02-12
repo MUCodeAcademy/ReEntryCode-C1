@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparisons</title>
+  </head>
+
+  <body>
+    <h1>
+      Let's take a look at the comparisons and try to guess if they'd be true or
+      false.
+    </h1>
+    <script>
+      // let inputFromUser = prompt("Give me a thing")
+
+      // Generic comparisons
+      let three = 3;
+      let threeString = "3";
+      let two = 2;
+      let twoString = "2";
+
+      //Greater Than
+      console.log("Line 25:", three > two);
+      console.log("Line 26:", two > two);
+
+      //Greater Than OR equal to
+      console.log("Line 29:", three >= two);
+      console.log("Line 30:", two >= two);
+
+      //Less Than / Less Than Equal To
+      console.log("Line 33:", three <= two);
+      console.log("Line 34:", two <= two);
+
+      //Equal to
+      console.log("Line 37:", two == twoString);
+      //Strict equal (this only exists in JavaScript)
+      console.log("Line 39:", two === twoString);
+
+      //not equal
+      console.log("Line 42:", two != three);
+      console.log("Line 43:", two !== twoString); 
+      console.log("Line 44:", two != two);
+
+      //Comparing Strings
+      console.log("Line 47:", threeString > twoString);
+      console.log("Line 48:", threeString > two);  
+      console.log("Line 49:", "Hello" == "hello");
+      console.log("Line 50:", "Hello" > threeString);
+
+      //Multiple Comparisons in one
+      // && AND
+      // || OR
+      console.log("Line 55:", 3 > 2 && 2 === "2");
+      console.log("Line 56:", 3 > 2 || 2 === "2");
+      console.log(
+        "Line 58:",
+        ((3 > 2 || 3 < 2) && (2 == 3 || 2 > 5)) || (1 > -1 && 5 >= 5)
+        //true
+      );
+
+      //If/Else Statements
+
+      if (three === threeString) {
+        console.log("Both are equal");
+      } else if (3 > 2) {
+        console.log("3>2");
+      } else {
+        console.log("How did you get here?");
+      }
+
+      //using a switch
+      let switchVariable = 3;
+      switch (switchVariable) {
+        case 4:
+          console.log("looks like you just have a 4 there");
+          break;
+        case 3:
+          console.log("looks like it's a 3");
+          break;
+        case 2:
+          console.log("Oh a 2 I see!");
+          break;
+        default:
+          console.log(
+            "The only numbers I know are 2, 3 and 4 and it isn't one of those."
+          );
+      }
+    </script>
+  </body>
+</html>

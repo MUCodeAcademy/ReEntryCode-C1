@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+
+    <script>
+      // A function is a set of statements that perform a certain task.
+
+      // Generic Overview:
+
+      //  function functionNameGoesHere()
+      //  {
+      //      write your code to do something
+
+      //      return (your return value);
+      //      more code or return on these lines
+      //  }
+      //  thisIsAFunction();
+
+      //Basic function example
+      let div = document.getElementById("div1");
+
+      // Create the function with code that we want to execute
+      function changeBackgroundColor() {
+        div.style.backgroundColor = "red";
+      }
+
+      // Run the function
+      changeBackgroundColor();
+
+      // Function example with parameters
+      let number1 = 1;
+      let number2 = 2;
+
+      function addition(firstNumber, secondNumber) {
+        let result = firstNumber + secondNumber;
+        return result;
+      }
+
+      addition(number1, number2);
+
+      function greeting(name, age, country) {
+        if (age > 50) {
+          console.log(`Your age is greater than 50.`);
+        } else {
+          console.log(`Your age is less than 50.`);
+        }
+        console.log(
+          `Your country is ${country}.`
+        );
+      }
+      let myName = "Justin";
+      //Calling a function
+      greeting(myName, 24, "United States");
+
+      //Calling a function with incorrect number of arguments.
+      greeting("Justin", 400);
+
+      // Different types of scope:
+
+      // Global: variable, function, or object defined outside of any function or object; 
+      //         can be accessed anywhere in the code.
+
+      // Local: variable, function, or object defined inside a function or object; 
+      //        can only be accessed within the function or object.
+
+      let variableOne = "First Variable"; // This has global scope; can be accessed anywhere
+      function showingScope() {
+        let variableTwo = "Second Variable"; // This only exists within this function (local scope)
+        console.log(variableOne, variableTwo);
+      }
+      showingScope();
+      // This console log below will give a reference error
+      // console.log(variableTwo);
+
+
+      // You should only have one return per function, because it will never run the second one. 
+      function returningValues(a, b) {
+        return a + b;
+        return a - b; // Will never execute and a lot IDEs will warn you of that.
+      }
+      
+      // Recursion
+      // As a concept, this is very important, BUT the implementation is not as common in web development.
+      // Additionally, it's very easy to create an infinite loop with recursion.
+
+      function countDown(fromNumber) {
+        console.log(fromNumber);
+
+        let nextNumber = fromNumber - 1; // 3 - 1, then 2 - 1, then 1 - 1, then stops
+
+        if (nextNumber > 0) {
+            countDown(nextNumber);
+        }
+      }
+
+      countDown(3);
+
+      // Arrow functions:
+      // While we used the function keyword above, we can also use const and then an arrow function.
+      // Arrow functions will be used commonly moving forward, especially when we start covering React.
+      // Get used to arrow functions now and use them whenever you can.
+
+      // Without arrow functions
+
+      function addTwoNonArrow(x, y) {
+        return x + y;
+      }
+
+      // With arrow function
+
+      const addTwoWithArrow = (x, y) => {
+        return x + y;
+      }
+
+    </script>
+  </head>
+
+  <body></body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Useful Prototypes</title>
+
+    <script>
+      //Array Linking
+      let arrayOne = [1, 2, 3, 4, 5];
+      console.log(arrayOne);
+      arrayOne.push(6); // adds an element to the end
+      console.log(arrayOne);
+
+      let arrayTwo = [1, 2, 3, 4, 5];
+      console.log(arrayTwo.shift()); // removes the first element and returns that removed element
+      console.log(arrayTwo);
+
+      let arrayThree = [1, 2, 3, 4, 5];
+      console.log(arrayThree.pop()); // removes the last element of the array and returns that element
+      console.log(arrayThree);
+
+      let arrayOneCopy = arrayOne;
+      console.log(arrayOneCopy, arrayOne);
+
+      arrayOneCopy = [2, 3];
+      console.log(arrayOneCopy, arrayOne);
+
+      // In JavaScript, arrays are reference types. 
+      // This means that when you assign an array to a new variable, 
+      // you are actually creating a reference to the original array in memory. 
+      // This is true for many other data types in JavaScript, such as objects and functions.
+      // When you assign arrayOne to arrayOneCopy, you are creating a reference to arrayOne in memory. 
+      // This means that any changes made to arrayOneCopy will also affect arrayOne, 
+      // because they both point to the same array in memory.
+      // If you want to create a true copy of the array, use the slice() function
+      let trueCopy = arrayone.slice();
+
+      // Other useful Array Prototypes:
+      // Any of these that needs a function as an argument can take an arrow function (both examples will be provided)
+      let newArray = [1, 4, 5, 3, 9, 7, 8, 6, 2, 9];
+      console.log(newArray.indexOf(9), newArray.indexOf(11)); // returns -1 if not present
+      console.log("line 49: " + newArray);
+      console.log("line 50: " + newArray.toString());
+      newArray.forEach((val) => console.log(val));
+      // OR
+      // newArray.forEach(function (val) {
+      //     console.log(val);
+      // });
+      console.log(newArray.sort()); // default order is ascending
+      console.log(newArray);
+      newArray = [1, 4, 5, 3, 9, 7, 8, 6, 2];
+      console.log(newArray.slice().sort());
+      console.log(newArray);
+      console.log("line 58: " + newArray.filter((val) => val > 5));
+      console.log("line 62: " + newArray);
+
+      // Mutate each element with a specific function
+
+      // Maps are going to be used ALL THE TIME in React
+      console.log(
+        newArray.map((val) => {
+          if (val > 5) {
+            return val - 3;
+          }
+          return val + 3;
+        })
+      );
+      
+      console.log(newArray);
+      //Reverse, join, multiple others for use
+
+      //String Prototypes
+      let usersName = prompt("What is your name?");
+      let nameArray = usersName.split("");
+      console.log(nameArray);
+      console.log(nameArray.reverse());
+      let reverseName = nameArray.join("");
+
+      //String useful prototypes
+      //length, charAt, indexOf, includes, split, substring
+    </script>
+  </head>
+
+  <body></body>
+</html>

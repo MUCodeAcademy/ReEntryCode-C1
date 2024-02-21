@@ -1,6 +1,6 @@
 # Store Project
 
-We will be building a virtual store, similar to websites like Amazon or Ebay.
+We will be building a virtual store, similar to websites like Amazon or eBay.
 
 There will be some things we can't do, such as letting people create accounts (that will come later) or letting them actually buy products, but we can build all of the other functionality for the site.
 

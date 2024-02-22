@@ -11,6 +11,7 @@ Here's what we'll need:
 3. Create a div that will display what the computer picked.
 4. Create a div that will display whether the user won, lost, or tied.
 
+## JavaScript
 
 ## Step One: Getting the Buttons to work:
 

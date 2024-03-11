@@ -1,3 +1,3 @@
 # Classwork
 
-We're going to create a very simple application with a few components.
+We're going to create a very simple To-Do list with a few components.

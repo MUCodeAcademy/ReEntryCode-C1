@@ -6,6 +6,8 @@ function Login() {
     // State to keep track of username
     const [username, setUsername] = useState("");
     // State to keep track of password
+    // password is is used for storing the state
+    // setPassword is used for updating the state
     const [password, setPassword] = useState("");
 
     const { currentUser, setUser, clearUser } = useUser();
@@ -16,15 +18,56 @@ function Login() {
         if (currentUser.length == 0) {
             // - Set the current user to their username
             setUser(username);
+            const data = {
+                username: username,
+                password: password
+            }
+            fetch("http://localhost:8080/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => console.log(response))
+            .catch((error) => {
+                console.error(error);
+            })
         } else {
             alert("You're already logged in");
         }
         setUsername("");
     }
 
-    // Register function (this will probably do the same thing as login for now)
-    function register() {
-        clearUser(username);
+    // Check if their username is a certain length before they register
+    async function register() {
+        if (username.length < 8) {
+            alert("your username must be at least 8 characters");
+        } else {
+            setUser(username);
+            const data = {
+                username: username,
+                password: password
+            }
+            // Send our data to our server
+            fetch("http://localhost:8080", {
+                // Tells the fetch function we want to post data
+                method: "POST",
+                // Tells the fetch function we're sending a json
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                // Puts our data in the body of the request as a JSON string
+                body: JSON.stringify(data)
+            })
+            // After the request runs, take the response and turn it to a string
+            .then(response => response.text())
+            .then(response => console.log(response))
+            // If there's an error, console.log it
+            .catch(error => {
+                console.log(error);
+            })
+        }
     }
 
     return (

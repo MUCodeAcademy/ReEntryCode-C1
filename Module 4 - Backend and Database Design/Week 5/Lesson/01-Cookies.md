@@ -13,13 +13,13 @@ Cookies are typically used for storing stateful information for the session, suc
 - Each cookie is limited in information stored; about 4 kilobytes per cookie (1 byte represents one letter, so about 4 thousand letters per cookie).
 - Because of the above, they're almost always limited to string information.
 - Most browsers limit the number of cookies per site. This, combined with the small amount of data sent, can cause problems if you need to send a lot of data via cookies.
-- Easily accessible and readable if the user finds them. Also vulnerable to XSS (Cross-site scripting) attacks and CSRF (Cross-site request forgery) attacks. Here are two mozilla docs that talk about these two: (https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting)(https://developer.mozilla.org/en-US/docs/Glossary/CSRF)
+- Easily accessible and readable if the user finds them. Also vulnerable to XSS (Cross-site scripting) attacks and CSRF (Cross-site request forgery) attacks. Here are two mozilla docs that talk about these: (https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting)(https://developer.mozilla.org/en-US/docs/Glossary/CSRF)
 
 Basically, cookies are really useful for storing simple information that does not need to be secure.
 
 ### Make sure you're following the law
 
-If you use cookies, it's best practice to implement cookie management and consent management on your site in order to comlpy with privacy laws in certain countries.
+If you use cookies, it's best practice to implement cookie management and consent management on your site in order to comply with privacy laws in certain countries.
 
 1. Include an opt-in disclosure, in which the user must specifically agree to the use of cookies.
 2. Include an opt-out disclosure, in which the user is given the option fo blocking some, or all, cookies.

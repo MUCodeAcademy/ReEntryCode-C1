@@ -87,4 +87,4 @@ fetch('http://localhost:3000/dashboard', {
 // ... now add all the .then functions like normal
 ```
 
-That makes sure that the cookies are actually being sent in the request so that the server can access the cookies.
+This makes sure that the cookies are actually being sent in the request so that the server can access the cookies.

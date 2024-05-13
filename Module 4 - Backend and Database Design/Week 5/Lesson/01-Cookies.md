@@ -1,4 +1,4 @@
-## Cookies
+# Cookies
 
 Cookies are typically used for storing stateful information for the session, such as whether the user is logged in, user's preferences/settings, items in a shopping cart, etc. You typically set a time limit, so the cookie will eventually expire and the data will be erased.
 
@@ -22,8 +22,10 @@ Basically, cookies are really useful for storing simple information that does no
 If you use cookies, it's best practice to implement cookie management and consent management on your site in order to comply with privacy laws in certain countries.
 
 1. Include an opt-in disclosure, in which the user must specifically agree to the use of cookies.
-2. Include an opt-out disclosure, in which the user is given the option fo blocking some, or all, cookies.
+2. Include an opt-out disclosure, in which the user is given the option of blocking some, or all, cookies.
 3. Include an implied consent disclosure, in which the user is informed that their use of the website implies consent to the use of the cookies.
+
+Here's a good example of a cookie consent banner/modal: ![Cookie-Modal](Cookie-Modal.png)
 
 ## Implementation
 

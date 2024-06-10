@@ -138,57 +138,59 @@ function Solitaire() {
       setFirstIndex(index);
       setClickedArray(array);
     } else {
-      switch (array) {
-        case array1:
-          setArray1(prevArray => [...prevArray, ...clicked]);
-          break;
-        case array2:
-          setArray2(prevArray => [...prevArray, ...clicked]);
-          break;
-        case array3:
-          setArray3(prevArray => [...prevArray, ...clicked]);
-          break;
-        case array4:
-          setArray4(prevArray => [...prevArray, ...clicked]);
-        case array5:
-          setArray5(prevArray => [...prevArray, ...clicked]);
-          break;
-        case array6:
-          setArray6(prevArray => [...prevArray, ...clicked]);
-          break;
-        case array7:
-          setArray7(prevArray => [...prevArray, ...clicked]);
-          break;
-        case array8:
-          setArray8(prevArray => [...prevArray, ...clicked]);
-      }
-      switch (clickedArray) {
-        case array1:
-            setArray1(prevArray => prevArray.filter((item, ind) => ind < firstIndex))    
+      if (array !== clickedArray) {
+        switch (array) {
+          case array1:
+            setArray1(prevArray => [...prevArray, ...clicked]);
             break;
           case array2:
-            setArray2(prevArray => prevArray.filter((item, ind) => ind < firstIndex));
+            setArray2(prevArray => [...prevArray, ...clicked]);
             break;
           case array3:
-            setArray3(prevArray => prevArray.filter((item, ind) => ind < firstIndex));
+            setArray3(prevArray => [...prevArray, ...clicked]);
             break;
           case array4:
-            setArray4(prevArray => prevArray.filter((item, ind) => ind < firstIndex));
-            break;
+            setArray4(prevArray => [...prevArray, ...clicked]);
           case array5:
-            setArray5(prevArray => prevArray.filter((item, ind) => ind < firstIndex));
+            setArray5(prevArray => [...prevArray, ...clicked]);
             break;
           case array6:
-            setArray6(prevArray => prevArray.filter((item, ind) => ind < firstIndex));
+            setArray6(prevArray => [...prevArray, ...clicked]);
             break;
           case array7:
-            setArray7(prevArray => prevArray.filter((item, ind) => ind < firstIndex));
+            setArray7(prevArray => [...prevArray, ...clicked]);
             break;
           case array8:
-            setArray8(prevArray => prevArray.filter((item, ind) => ind < firstIndex));
-            break;
+            setArray8(prevArray => [...prevArray, ...clicked]);
         }
-        setClicked();
+        switch (clickedArray) {
+          case array1:
+              setArray1(prevArray => prevArray.filter((item, ind) => ind < firstIndex))    
+              break;
+            case array2:
+              setArray2(prevArray => prevArray.filter((item, ind) => ind < firstIndex));
+              break;
+            case array3:
+              setArray3(prevArray => prevArray.filter((item, ind) => ind < firstIndex));
+              break;
+            case array4:
+              setArray4(prevArray => prevArray.filter((item, ind) => ind < firstIndex));
+              break;
+            case array5:
+              setArray5(prevArray => prevArray.filter((item, ind) => ind < firstIndex));
+              break;
+            case array6:
+              setArray6(prevArray => prevArray.filter((item, ind) => ind < firstIndex));
+              break;
+            case array7:
+              setArray7(prevArray => prevArray.filter((item, ind) => ind < firstIndex));
+              break;
+            case array8:
+              setArray8(prevArray => prevArray.filter((item, ind) => ind < firstIndex));
+              break;
+          }
+          setClicked();
+      }
     }
   }
 

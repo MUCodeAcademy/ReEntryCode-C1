@@ -1,0 +1,51 @@
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.holdContainer, .matchContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.cellContainer {
+    border: .1vw solid black;
+    height: 15vh;
+    width: 5vw;
+    margin: 1vw;
+    border-radius: 5%;
+}
+
+.mainCells {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    margin-right: 7%;
+    margin-top: 2%;
+    color: rgb(139, 0, 0)
+}
+
+img {
+    position: absolute;
+    height: 15vh;
+    width: auto;
+}
+
+img:hover {
+    border: 2px solid yellow;
+}
+
+.cellContainer > img {
+    position: relative;
+}
+
+.selected {
+    border: 2px solid red;
+}

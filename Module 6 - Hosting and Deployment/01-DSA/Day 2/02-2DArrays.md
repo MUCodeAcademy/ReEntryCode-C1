@@ -42,4 +42,7 @@ console.log(MathScore[4][0]); // returns 'Ben Jamin'
 console.log(MathScore[2][1]); // returns 5
 console.log(MathScore[1][3]); // returns 'B'
 console.log(MathScore[2][2]); // returns 24
+
+// This will always give you the last element of the array
+console.log(MathScore[MathScore.length-1][(MathScore[MathScore.length -1]).length - 1]); // returns 'B'
 ```

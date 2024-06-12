@@ -12,7 +12,7 @@ You will use each time complexity once.
 | O(n^2)   | Quadratic  | 100 | 10,000
 | O(2^n)   | Exponential | 1,024 | 1.26 * 10^30
 
-1. 
+1. This is a function that loops through an array and checks if any element matches the given targets.
 
 ```js
 function search(array, target) {
@@ -27,7 +27,7 @@ function search(array, target) {
 
 Answer: 
 
-2. 
+2. This is a function that goes to the index of an array and returns it.
 
 ```js
 function getFirstElement(array) {
@@ -37,7 +37,7 @@ function getFirstElement(array) {
 
 Answer: 
 
-3. 
+3. This is a function that log every pair of elements in an array
 
 ```js
 function printAllPairs(array) {
@@ -51,7 +51,7 @@ function printAllPairs(array) {
 
 Answer:
 
-4. 
+4. This is a function that returns every number in an array starting at n.
 
 ```js
 function recursive(n) {
@@ -64,7 +64,7 @@ function recursive(n) {
 
 Answer:
 
-5. 
+5. This is an algorithm that searches for a specific element in an array.
 
 ```js
 function binarySearch(array, target) {

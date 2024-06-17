@@ -1,6 +1,6 @@
 # Linked Lists
 
-A linked list is a linear data structure in which elements are not stored at contiguous memory locations. Instead, each element (referred to as a node) points to the next element by means of a pointer. Linked lists provide a dynamic way of storing data, which can grow and shrink in size efficiently.
+A linked list is a linear data structure in which elements are not stored at contiguous memory locations. This means that the data is stored wherever there is free space in memeory, and not right next to each other like arrays. Instead, each element (referred to as a node) points to the next element by means of a pointer. Linked lists provide a dynamic way of storing data, which can grow and shrink in size efficiently.
 
 A linked list consists of nodes where each node contains:
 

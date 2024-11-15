@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tables and Forms</title>
+  </head>
+
+  <body>
+    <nav>
+      <div class="link center"><a href="#forms">Forms</a></div>
+      <hr />
+    </nav>
+
+    <header class="container top-container">
+      <h2 class="center">
+        And now we're going to go over some extra important things!
+      </h2>
+    </header>
+
+    <section class="container" id="forms">
+      <header>
+        <h2 class="center">What if you need forms someone can fill out?</h2>
+      </header>
+      <article>
+        <p class="center">
+          Basic Forms are usually submitted with JavaScript, 
+          which we won't be using for now. 
+          While you can set them up to submit without using JavaScript, 
+          this is not something you would normally do.
+          Below is a normal login!
+        </p>
+        <form action="randomwebsite.website" id="firstForm">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+          />
+
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Password"
+          />
+          <input type="submit" value="Submit form" onclick="logMeIn" />
+        </form>
+      </article>
+      <article>
+        <p>When building forms, it's best to keep like information together</p>
+        <form id="second-form">
+          <h3>Basic Info</h3>
+          <label for="name">Name:</label>
+          <input type="text" id="name" />
+          <label for="phone">Phone:</label>
+          <input type="text" id="phone" />
+          <p>You can use Radios for selecting only one option</p>
+
+          <h3>Favorite Music Genre:</h3>
+          <input type="radio" id="music-choice1" name="music" value="norteno" />
+          <label for="music-choice1">Norteño</label>
+
+          <input type="radio" id="music-choice2" name="music" value="Zydeco" />
+          <label for="music-choice2">Zydeco</label>
+
+          <input
+            type="radio"
+            id="music-choice3"
+            checked="checked"
+            name="music"
+            value="throatsinging"
+          />
+          <label for="music-choice3">Mongolian Throat Singing</label>
+
+          <p>You can use Checkboxes for selecting only multiple option</p>
+
+          <h3>Favorite Foods:</h3>
+          <input
+            type="checkbox"
+            id="food-choice1"
+            name="food"
+            value="curry"
+            checked="checked"
+          />
+          <label for="food-choice1">Curry</label>
+
+          <input
+            type="checkbox"
+            id="food-choice2"
+            name="food"
+            value="icecream"
+          />
+          <label for="food-choice2">Ice Cream</label>
+
+          <input
+            type="checkbox"
+            id="food-choice3"
+            name="food"
+            value="pizza"
+            checked="checked"
+          />
+          <label for="food-choice3">Pizza</label>
+
+          <p>Select Boxes allow for multiple options in a dropdown format</p>
+          <label for="favorite-car">Favorite Car</label>
+          <select name="favorite-car" id="favorite-car">
+            <optgroup label="Foreign">
+              <option value="Yugo">Yugo</option>
+              <option value="Datsun">Datsun</option>
+            </optgroup>
+            <optgroup label="Domestic">
+              <option value="Pinto" selected>Pinto</option>
+              <option value="Nova">Nova</option>
+            </optgroup>
+          </select>
+
+          <p>
+            Buttons can be added to also allow for custom functionality via JS
+            such as form clearing
+          </p>
+          <button onclick="document.getElementById('second-form').reset()">
+            Clear Form
+          </button>
+
+          <p>Text area inputs allow for A TON of text:</p>
+          <label for="textarea">Your life story</label>
+          <textarea id="textarea" class="container"></textarea>
+          <p>
+            HTML5 also introduced a bunch of new inputs as well but make sure
+            you check cross browser compatibility:
+          </p>
+
+          <label for="html5-2">Date</label>
+          <input type="date" id="html5-2" /><br /><br />
+
+          <label for="html5-3">Color</label>
+          <input type="color" id="html5-3" /><br /><br />
+
+          <label for="html5-4">File</label>
+          <input type="file" id="html5-4" /><br /><br />
+
+          <input type="submit" value="SUBMIT" />
+        </form>
+      </article>
+    </section>
+  </body>
+</html>

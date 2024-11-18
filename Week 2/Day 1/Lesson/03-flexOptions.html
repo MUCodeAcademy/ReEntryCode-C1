@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>FlexBox Options</title>
+    <style>
+      .item {
+        background-color: #ffa500;
+        color: white;
+        flex: 1 1 100px;
+        /*    flex-grow: 1 
+              flex-shrink: 1;
+              flex-basis: calc((100% / 3) * 2 - 12px);
+        */
+        border: 1px solid black;
+      }
+      .item:nth-child(odd) {
+        background-color: #0088ff;
+      }
+      .v-container {
+        display: flex;
+        flex-flow: column wrap;
+        /* 
+        Flex direction and wrapping
+        */
+      }
+      .h-container {
+        display: flex;
+        justify-content: space-around;
+        flex-flow: row wrap;
+      }
+
+      .two {
+        flex: 1 1 200px;
+      }
+      .three {
+        flex: 1 1 300px;
+      }
+      .five {
+        flex: 1 1 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Column</h1>
+    <div class="v-container">
+      <div class="item three">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item five">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+    </div>
+    <h1>Flex Row</h1>
+    <div class="h-container">
+      <div class="item two">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item three">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item five">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+      <div class="item">
+        Sed interdum lorem malesuada, eleifend mauris eget, vehicula est. Aenean
+        volutpat arcu eget nunc mattis, et faucibus augue convallis. Fusce at
+        elit gravida, viverra mi vel, facilisis velit. Praesent tincidunt
+        ullamcorper nibh. Orci varius natoque penatibus et magnis dis parturient
+        montes, nascetur ridiculus mus. Integer quis volutpat ipsum. Nulla
+        viverra imperdiet efficitur.
+      </div>
+    </div>
+  </body>
+</html>

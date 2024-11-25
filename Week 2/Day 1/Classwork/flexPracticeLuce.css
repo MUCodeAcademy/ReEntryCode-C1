@@ -1,0 +1,37 @@
+.blueContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 70%;
+}
+
+.redContainer {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+}
+
+.blueContainer > div {
+    background-color: blue;
+    flex-basis: 32%;
+    margin: 2px;
+    height: 150px;
+}
+
+.redContainer > div {
+    background-color: red;
+    flex-basis: 100%;
+    margin: 2px;
+}
+
+.mainContainer {
+    display: flex;
+}
+
+h1 {
+    background-color: black;
+}
+
+* {
+    color: white;
+    text-align: center;
+}

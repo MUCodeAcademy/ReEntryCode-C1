@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+}
+
+header {
+    display: flex;
+    background-color: grey;
+    justify-content: space-between;
+}
+
+img {
+    width: 15%;
+}
+
+h1 {
+    margin-right: 50px;
+}
+
+nav {
+    display: flex;
+    width: 99%;
+    margin: 5px;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+a {
+    background-color: rgb(217, 208, 208);
+    width: 100%;
+}
+
+a:hover {
+    background-color: rgb(169, 167, 167);
+}
+
+a:first-child {
+    background-color: grey;
+}
+
+.mainContainer {
+    display: flex;
+    width: 100%;
+}
+
+li, h3 {
+    text-align: center;
+    padding-left: 75px;
+    list-style-type:circle;
+    margin-right: 20px;
+}
+
+.fishContainer {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+}
+
+.fish {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fish > img{
+    width: 20%;
+    height: 40%;
+    margin-right: 5px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100px;
+    background-image: url(fish4.jpg);
+    background-size: contain;
+}
+
+h4 {
+    text-shadow: 2px 2px 2px white;
+}

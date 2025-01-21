@@ -16,4 +16,4 @@ You will then have to go into the folder in the terminal with the 'cd' command:
 
 Now you can the app with this command:
 
-`npx vite`
+`npx vite` or `npm run dev`

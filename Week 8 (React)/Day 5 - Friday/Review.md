@@ -69,7 +69,7 @@
        const [data, setData] = useState("");
        return(
            <>
-               <input value={data}>
+               <input value={data} />
            </>
        )
    }

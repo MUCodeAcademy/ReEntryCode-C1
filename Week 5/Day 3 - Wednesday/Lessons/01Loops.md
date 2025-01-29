@@ -31,7 +31,7 @@ for (let i = 0; i < a.length; i++) {
 
 What will this output to the console?
 
-- 
+- It will log each number in the array
 
 ## While loop
 

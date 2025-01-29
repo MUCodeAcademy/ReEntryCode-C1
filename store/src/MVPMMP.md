@@ -20,3 +20,4 @@
 
 - Ads on the side
 - Wishlist
+- Toggle between light and dark theme

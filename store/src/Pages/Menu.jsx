@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useUser } from "./Context/UserContext";
+import { useUser } from "../Context/UserContext";
+import '../CSS/Menu.css';
 
 function Menu() {
     const [username, setUsername] = useState("");
@@ -30,7 +31,7 @@ function Menu() {
                 value={password}
             />
             <button onClick={() => setUser(username)}>Sign in</button>
-            <img src='cartIcon.png' />
+            <img style={{ width: "100px", height: "auto" }} src='cartIcon.png' />
             <nav></nav> 
         </>
     )

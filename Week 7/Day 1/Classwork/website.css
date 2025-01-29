@@ -1,0 +1,659 @@
+body {
+    width: 1010px;
+    position: absolute;
+    background-color: black;
+    color: rgb(6, 207, 6);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+    color:black;
+    text-shadow: 2px 2px 2px purple;
+    font-size: x-large;
+    border:2px solid black;
+    border-radius: 10px 20px 0 20px;
+    box-shadow: 3px 3px 4px 4px green;
+    background-image: linear-gradient(45deg, black 0%, gray 50%, black 100%);
+    margin: 5px;
+}
+
+header img {
+    float: right;
+    height: 3em;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-delay: .5s;
+}
+
+header:hover img {
+    background-color: red;
+    border-radius: 20px;
+    transform:skewX(180deg);
+}
+
+h3 > div {
+    height: 10vh;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-delay: .5s;
+    /* transition-property: height;
+    transition-duration: 2s;
+    transition-delay: 1s; */
+    /* background-color: purple; */
+}
+
+h3 {background-color: blue;
+    /* color: green; */
+    height: 10vh;
+    padding: 20px;
+    
+    /* transition-property: color;
+    transition-duration: 2s;
+    transition-delay: 1s; */
+}
+
+h3:hover > div {
+    height: 15vh;
+    background-color: red;
+}
+
+
+
+/* #navbar ul {
+    list-style-type: none;
+    padding: 1em 0;
+    text-align: center;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+#navbar ul li {
+    display: inline;
+    padding: 0 1.5em;
+}
+
+#navbar ul li a {
+    font-weight: bold;
+    color: black;
+}
+
+#navbar ul li a.current {text-decoration: none;
+}
+
+#navbar1 ul {
+    list-style-type: none;
+}
+
+#navbar1 ul li {
+    float: left;
+}
+
+#navbar1 ul li a {
+    text-align: center;
+    display: block;
+    width: 200px;
+    padding: 1em 0;
+    text-decoration: none;
+    background-color: purple;
+    color: white;
+    font-weight: bold;
+    border-right: 2px solid white;
+    margin: .5em;
+}
+
+#navbar1 ul li a.lastitem {
+    border-right: none;
+}
+
+#navbar1 ul li a.current1 {color: rgb(3, 203, 3);
+} */
+
+#navbar5 ul {
+    list-style-type: none;
+    list-style: none;
+    position: relative; 
+}
+
+#navbar5 ul li { float: left; }
+
+#navbar5 ul ul {
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+}
+
+#navbar5 ul ul li {
+    float: none;
+    position: relative;
+}
+ 
+#navbar5 ul ul li ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+#navbar5 ul li.lastitem ul li ul {
+    left: -100%; }
+
+#navbar5 ul li:hover > ul{
+    visibility: visible;
+}
+
+#navbar5 > ul::after {
+    content: "";
+    display: block; 
+    clear: both; }
+
+#navbar5 ul {
+    margin: 0;
+    padding: 0; }
+
+#navbar5 ul li a {
+    text-align: center;
+    display: block;
+    width: 200px;
+    padding: 1em 0;
+    text-decoration: none;
+    /* background-color: black; */
+    background-image: linear-gradient(45deg, black 0%, gray 50%, black 100%);
+    color: lightgray;
+    font-weight: bold; 
+    border-right: 2px solid gray;
+    border-radius: 10px 20px 0px 20px; }
+
+#navbar5 ul li.lastitem a {
+    border-right: none;
+    width: 200px; }
+
+#navbar5 ul li a.current {
+    color: red; }
+
+#navbar5 ul li a:hover, #navbar5 ul li a:focus {
+    /* background-color: green; */
+    background-image: linear-gradient(45deg, green 0%, gray 50%, green 100%); }
+
+#test {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-delay: .5s;
+}
+
+#boilerRoom:hover #test {
+    opacity: 1;
+}
+
+/* Mobile-first CSS for smallest viewports */
+
+/* .navbar6 {
+    position: relative;
+    background-color: black;
+    & a {
+        display: block;
+        padding: .25em 1em;
+        margin: .25em;
+        text-decoration: none;
+        color: white);
+    }
+    & a:hover, a:focus {
+        text-decoration: underline;
+    }
+    & a.current {
+        border: 2px solid;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+    & ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.menu {
+    position: absolute;
+    left: 0;
+    display: none;
+    background-color: black;
+    color: white;
+}
+#checkbox-toggle { display: none; }
+.menu-btn {
+    display: block;
+    padding: 0.25em 1em;
+    color: white;
+    font-size: 24px;
+}
+.menu-btn::after { content: "\2630"; }
+#checkbox-toggle:checked ~ .menu {
+    display: block;
+}
+#checkbox-toggle:checked ~ .menu-btn::after {
+    content: "\2716";
+} */
+
+/* Media query for larger screens */
+
+/* @media only screen and (min-width: 745px) {
+    .menu {
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .menu-btn { display: none; }
+    #checkbox-toggle:checked ~ .menu { display: flex; }
+} */
+
+/* Mobile-first CSS for the submenu */
+
+/* .menu li:has(.submenu) {
+    position: relative;
+    & small::after {
+        content: "\25b6";
+    }
+    & small {
+        margin-left: .25em;
+    }
+    &:hover > .submenu {
+        display: block;
+    }
+}
+
+.submenu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: white;
+    color: black;
+    width: 150%;
+    display: none;
+} */
+
+/* Media Query for the submenu for larger screens */
+
+/* @media only screen and (min-width: 745px) {
+    .menu li:has(submenu) small::after {
+        content: "\25bc";
+    }
+    .submenu {
+        top: auto;
+        left: 0;
+        width: 200%;
+    }
+} */
+
+/* .linkbar {
+    display: flex;
+    justify-content: space-evenly;
+    width: 99%;
+    text-align: center;
+    flex-direction: row;
+    margin: 5px;
+} */
+
+
+
+/*a {
+    display: inline-block;
+    justify-content: space-evenly;
+    width: 100%;
+    text-align: center;
+    background-color: lightgray;
+    color: black;
+    height: 20px;
+    margin: 2px;
+    flex-basis: 100%;
+    text-align: center;    
+}*/
+
+/* a:hover {
+    background-color: gray;
+} */
+
+.mainContainer {
+    display: flex;
+    width: 100%;
+}
+
+legend {
+    color: darkgray;
+}
+
+.greenContainer {
+    display: flex;
+    background-color: darkgray;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    flex-basis: 70%;
+}
+
+.greenContainer > div {
+    background-color: purple;
+    color:rgb(2, 209, 2);
+    border-radius: 10px;
+    /* height: 100px; */
+    margin: 2px;
+    padding: .30em;
+    /* flex-basis: 32%; */
+    width: 47%;
+    height: 5em;
+    text-align: center;
+    align-content: center;
+    word-break: break-all;
+}
+
+#yard {
+    height: 21em;
+    width: 100%;
+    border-radius: 10px;
+    color: blueviolet;
+    background-color: darkgreen;
+}
+
+.redContainer {
+    display: flex;
+    background-color: pink;
+    flex-basis: 30%;
+    flex-direction: column;
+}
+.redContainer > div {
+    background-color: red;
+    color: lightgray;
+    margin: 2px;
+    /* flex-basis: 60%; */
+    width: 25em;
+    height: 7em;
+}
+
+.inmatepic {
+    float: right;
+    height: 5em;
+}
+
+.inmatepic:hover {
+    filter: invert(.90);
+    cursor: crosshair;
+}
+
+.inmatename {
+    color: greenyellow;
+}
+
+.opencell {
+    color: white;
+}
+
+.locks {
+    color: black;
+}
+
+#lock {
+    background-color: lightgray;
+}
+
+.threatlevellabel {
+    color: black;
+}
+
+/* .threatslider {
+    color: black;
+    background-color: black;
+}
+
+#threatlevel {
+    color: black;
+    background-color: black;
+} */
+
+form {
+    background-color: black;
+    color: rgb(6, 207, 6);
+}
+
+form h2 {
+    text-align: center;
+}
+
+/* .patientinfo {
+    padding: .5em;
+    border: 1px green;
+    background-color: purple;
+} */
+
+.formcontainer1 {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: row;
+}
+
+.formcontainer1 > div {
+    flex-basis: 20%;
+}
+
+.formcontainer2 {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: row;
+}
+
+.formcontainer2 > div {
+    align-content: space-evenly;
+}
+
+.formcontainer3 {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: row;
+}
+
+.formcontainer3 > div {
+    flex-basis: 50%;
+}
+
+.formcontainer4 {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: row;
+}
+
+.formcontainer4 > div {
+    flex-basis: 49%;
+    align-content: center;
+}
+
+.formcontainer4 > div:last-child {
+    background-image: linear-gradient(45deg, black 0%, gray 50%, black 100%);
+    border-radius: 10px 20px 0px 20px;
+    box-shadow: 3px 3px 4px 4px green;
+    flex-basis: 49%;
+    align-content: center;
+    text-align: center;
+}
+
+#fileupload {
+    background-image: linear-gradient(45deg, black 0%, gray 50%, black 100%);
+    color: rgb(6, 207, 6);
+    text-shadow: 2px 2px 2px purple;
+    height: 2em;
+    border-radius: 10px 20px 0px 20px;
+    box-shadow: 3px 3px 4px 4px green;
+}
+
+.patientinfo1 {
+    background-color: rgb(1, 63, 1);
+    color: gray;
+}
+
+#name {
+    width: 100%;
+}
+
+#email {
+    width: 100%;
+}
+
+#phone {
+    width: 100%;
+}
+
+#link {
+    width: 100%;
+}
+
+#creditcard {
+    width: 20em;
+}
+
+#cvv {
+    width: 6em;
+}
+
+#expirationdate {
+    width: 10em;
+}
+
+#pin {
+    width: 21em;
+    padding-right: 9px;
+}
+
+#comments {
+    height: 5em;
+    width: 50em;
+    padding-right: 10px;
+}
+
+#resetform {
+    background-image: linear-gradient(45deg, black 0%, gray 50%, black 100%);
+    color: rgb(6, 207, 6);
+    text-shadow: 2px 2px 2px purple;
+    height: 3em;
+    width: 48%;
+    margin: 0px 10px 10px 0px;
+    padding: 0em 15.5em 0em;
+    border-radius: 10px 20px 0px 20px;
+    box-shadow: 3px 3px 4px 4px green;
+}
+
+#submitintake {
+    background-image: linear-gradient(45deg, black 0%, gray 50%, black 100%);
+    color: rgb(6, 207, 6);
+    text-shadow: 2px 2px 2px purple;
+    height: 3em;
+    width: 49%;
+    margin: 0px 10px 10px 0px;
+    padding: 0em 15.5em 0em;
+    border-radius: 10px 20px 0px 20px;
+    box-shadow: 3px 3px 4px 4px green;
+}
+
+.products {
+    color: rgb(6, 207, 6);
+}
+
+#accordian h3 {
+    border-radius: 20px;
+    background-color: purple;
+    color: rgb(6, 207, 6);
+    height: 1em;
+}
+
+#accordian h3 a {
+    color: rgb(6, 207, 6);
+}
+
+#accordian div {
+    border-radius: 20px;
+    background-color: white;
+    color: black;
+    overflow: hidden;
+    height: 0;
+    transition: height 1s ease-in-out;
+}
+
+#accordian div:target {
+    height: 30px;
+    background-color: white;
+    color: black;
+}
+
+.paddedroom {
+    color: white;
+}
+
+footer {
+    text-align: center;
+    color: black;
+    text-shadow: 2px 2px 2px purple;
+    font-size: x-large;
+    border:2px solid black;
+    border-radius: 10px 20px 0 20px;
+    box-shadow: 3px 3px 4px 4px green;
+    background-image: linear-gradient(45deg, black 0%, gray 50%, black 100%);
+    margin: 5px;
+}
+
+
+/*
+
+#navbar5 ul ul {
+    display: none;
+    position: absolute;
+    top: 100%; 
+}
+
+#navbar5 ul li:hover > ul {
+    display: block; 
+}
+
+#test {
+    height: 10vh !important;
+    background-color: gray;
+    border: 2px solid red !important;
+    transition-property: all !important;
+    transition-duration: 1s !important;
+    transition-delay: .5s !important;
+}
+
+#boilerRoom:hover #test {
+    height: 15vh !important;
+    background-color: red !important;
+}
+
+In the code above, we're changing elements from display: none to display: block when the parent is hovered over.
+We're also trying to transition the #test element.
+In the background, the browser is removing the element entirely (for 'none'), and then adding the element back (for 'block').
+There are 2 issues with this:
+    1. When it changes from 'none' to 'block', the element is rendered immediately, which skips transitions.
+    2. We could try to transition from 'none' to 'block', however there are no states in between removing it entirely, and adding it to the page.
+    (Simply put, it's either on the page or it's not - there is no in between, therefore no ability to smoothly transition.)
+
+Instead, we should use 'visibility' and 'opacity'.
+Visibility doesn't remove the element entirely, it's either hidden or visible, but technically always on the page.
+This means that when we change an element from 'hidden' to 'visible', it won't skip transitions.
+Additionally, opacity will let us smoothly transition the transparency from 0 (not visible) to 1 (visible).
+
+#navbar5 ul ul {
+    visibility: hidden;
+    position: absolute;
+    top: 100%;
+}
+
+#navbar5 ul li:hover > ul {
+    visibility: visible;
+}
+
+Then, we want to transition our opacity from 0 to 1 for the element we want a transition for.
+
+#test {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-delay: .5s;
+}
+
+#boilerRoom:hover #test {
+    opacity: 1;
+}

@@ -110,7 +110,13 @@ function add(firstNumber, secondNumber) {
     return firstNumber + secondNumber;
 }
 
-let result = add(firstNumber, secondNumber);
+let result = add(1, 2);
+
+function changeColor(element, color) {
+    element.style.backgroundColor = color; 
+}
+
+changeColor(document.getElementsByClass("div5"), "blue");
 ```
 
 Since we added a return to the function, it will add the two numbers together and output the result from the function. However, we still need some place to store that returned value, so we set result equal to the function call. This will store the firstNumber + secondNumber calculation in the result variable. If we didn't add the return keyword, the function wouldn't output anything even though the calculation still happens.
@@ -121,7 +127,8 @@ If you want some code to run when the user does something, you can use event han
 
 ```js
 const button = document.getElementById("buttonID");
-button.addEventListener("click", add);
+button.addEventListener("click", add(1, 2));
+button.addEventListener("click", changeColor(button, "red"));
 ```
 
 This will run the "add" function when they click on the button.

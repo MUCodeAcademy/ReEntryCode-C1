@@ -24,25 +24,25 @@ movieGenres[0];
 What would it look like if we wanted to log "Horror" to the console?
 
 ```js
-
+console.log(movieGenres[2]);
 ```
 
 What do you think would happen if we tried to log something outside the array?
 
 ```js
-// This will log: 
+// This will log: undefined
 console.log(movieGenres[4]);
 ```
 
 What do you think we should do if we wanted to the change the value of the item in the first index?
 
 ```js
-
+movieGenres[1] = "Thriller";
 ```
 
 It's common practice to declare arrays with the `const` keyword. Why would we use `const` rather than `let` even if we're going to change the values in the array?
 
-- 
+- We are only changing the items in the array, not the entire array itself.
 
 ## Objects
 
@@ -75,7 +75,7 @@ car.price;
 How would we log the weight of the car to the console?
 
 ```js
-
+console.log(car.weight);
 ```
 
 Sometimes, you might want to add another property to an already existing object. Let's say we wanted to add another property called 'condition'; all we have to do is specify the object name, the key we want to add, and the value:
@@ -104,7 +104,7 @@ const car = {
     weight: 3500,
     condition: "New",
     engine: {
-        cydlinders: 4,
+        cylinders: 4,
         size: 2.2
     }
 }
@@ -113,7 +113,7 @@ const car = {
 How would we get the amount of cylinders of the engine?
 
 ```js
-
+car.engine.cylinders;
 ```
 
 ## Methods

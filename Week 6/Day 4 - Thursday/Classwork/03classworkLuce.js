@@ -23,6 +23,7 @@ while (correct == false) {
 }
 
 function createObstacle(obstacleText, option, result1, result2, obstacleCount) {
+
     let obstacle = prompt(userInfo.name + " the " + userInfo.class + obstacleText);
 
     if (obstacle.toLowerCase() == option) {
@@ -31,7 +32,9 @@ function createObstacle(obstacleText, option, result1, result2, obstacleCount) {
         alert(result2);
     }
 
-    userInfo.obstacleCount = obstacle;
+    // Use brackets so we can use the obstacleCount parameter
+    userInfo[obstacleCount] = obstacle;
+    console.log(userInfo);
 }
 
 createObstacle(
@@ -39,7 +42,7 @@ createObstacle(
     "swim",
     "Great looks like you want to get a little wet!",
     "Wow! You're a rich man!",
-    1
+    "obstacle1"
  );
 
  createObstacle(
@@ -47,7 +50,7 @@ createObstacle(
     "coke",
     "A bit typical, but a great choice!",
     "Super refreshing!",
-    2
+    "obstacle2"
  );
 
 //  And you would continue with the other obstacles
@@ -107,5 +110,13 @@ newDiv.style.margin = "20px"
 newDiv.style.marginTop = "0"
 newDiv.style.padding = "20px";
 newDiv.style.fontSize = "large"; 
-newDiv.innerHTML = `${userInfo.name} the ${userInfo.class} comes across a river and chooses to ${userInfo.obstacle1Ans}. Next, he stumbles along a resturant. ${userInfo.name} the ${userInfo.class} chooses to sit down for a drink and chooses ${userInfo.obstacle2Ans}. When he is finished with his drink he leaves the resturant and comes across an angry stranger wanting to fight. He chooses to ${userInfo.obstacle3Ans}. After that whole ordeal he is very exhuasted. He than chooses to ${userInfo.obstacle4Ans}. Then after he is rested up he reaches home and choose to go into the ${userInfo.obstacle5Ans} door. Fianlly ${userInfo.name} the ${userInfo.class} is home sweet home!`;
+console.log(userInfo);
+newDiv.innerHTML = `
+    ${userInfo.name} the ${userInfo.class} comes across a river and chooses to ${userInfo.obstacle1}. 
+    Next, he stumbles along a resturant. ${userInfo.name} the ${userInfo.class} chooses to sit down for a drink and chooses ${userInfo.obstacle2}. 
+    When he is finished with his drink he leaves the resturant and comes across an angry stranger wanting to fight. 
+    He chooses to ${userInfo.obstacle3}. After that whole ordeal he is very exhuasted. He than chooses to ${userInfo.obstacle4}. 
+    Then after he is rested up he reaches home and choose to go into the ${userInfo.obstacle5A} door. 
+    Fianlly ${userInfo.name} the ${userInfo.class} is home sweet home!
+`;
 document.body.append(newDiv);

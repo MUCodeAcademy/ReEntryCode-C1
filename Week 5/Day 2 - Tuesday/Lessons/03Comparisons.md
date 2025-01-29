@@ -11,38 +11,40 @@ let three = 3;
 let two = 2;
 
 // Greater than
-three > two
-two > two
+three > two // true
+two > two // false
 
 // Greater than OR equal to
-three >= two
-two >= two
+three >= two // true
+two >= two // true
 
 // Less than OR equal to
-three <= two
-two <= two
+three <= two // false
+two <= two // true
 
 // Equal to (double equals)
-three == two
-two == two
+three == two // false
+two == two // true
 // What would happen if we did this?
-three = two
+three = two // the variable three now equals to
 
 // NOT equal to
-three != two
-two != two
+three != two // true
+two != two // false
 
 // Strict equals is ===, meaning that they need to be the same value AND the same type
 let threeString = "3";
 
-three == threeString
-three === threeString
+three == threeString // true
+three === threeString // false
 
 // Multiple comparisons in one
-// && AND
-// || OR
-3 > 2 && 2 == 2
-3 > 2 || 2 == 2
+// && AND both sides have to be true
+// || OR one of the sides have to be true
+3 > 2 && 2 == 2 // true
+3 > 2 || 2 == 2 // true
+2 > 3 || 2 == 2 // true
+2 > 3 && 2 == 2 // false
 
 // If/Else Statements
 
@@ -53,4 +55,33 @@ if (three === threeString) {
 } else {
     console.log("This shouldn't happen.");
 }
+
+if (currentTime <= 0) {
+    stopTheTimer;
+} else {
+    keepCountingDown;
+}
 ```
+
+## Comparisons Table
+
+### && (AND) = if both conditions are true, then it will be true
+
+TRUE && TRUE = TRUE
+
+TRUE && FALSE = FALSE
+
+FALSE && TRUE = FALSE
+
+FALSE && FALSE = FALSE
+
+### || (OR) = if at least one of the conditions is true, then it will be true
+
+TRUE || TRUE = TRUE
+
+TRUE || FALSE = TRUE
+
+FALSE || TRUE = TRUE
+
+FALSE || FALSE = FALSE
+

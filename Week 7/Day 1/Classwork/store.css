@@ -1,0 +1,26 @@
+.cartIcon {
+    height: 100%;
+    float: right;
+}
+
+header > div {
+    height: 10vh;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-delay: .5s;
+}
+
+header {
+    background-color: blue;
+    height: 10vh;
+    padding: 20px;
+}
+
+/* Targets each div inside the header when hovering over the header */
+header:hover > div {
+    background-color: red;
+}
+
+.totalClass {
+    background-color: blue;
+}

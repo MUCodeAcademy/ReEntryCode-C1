@@ -94,4 +94,11 @@ const div = document.getElementById("divId");
 div.append(newDiv);
 ```
 
-Here, I'm making a new div, selecting another one that's already in my HTML, and adding it there. Now, it will be a child of that div. 
+Here, I'm making a new div, selecting another one that's already in my HTML, and adding it there. Now, it will be a child of that div.
+
+```js
+const div = document.getElementById("divId");
+div.remove();
+```
+
+This removes your selected element.

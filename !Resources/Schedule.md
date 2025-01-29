@@ -7,3 +7,5 @@ Holiday Break: December 23 - January 5
 Easter Break: April 18 - April 21
 
 Last Day: May 16, 2025
+
+Extra Weeks: Until May 30, 2025

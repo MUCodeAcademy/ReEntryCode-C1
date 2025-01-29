@@ -24,8 +24,8 @@ OR
 
 The difference between let and const:
 
-- `let`: The variable's value can change.
-- `const`: The variable's value cannot change.
+- let: The variable's value can change.
+- const: The variable's value cannot change.
 
 ```js
 // Variables are typically named using a convention called camelCase. The first word is lower case, and every following word is capitalized.
@@ -114,7 +114,7 @@ changingType = "It's a string now!";
 
 ## Syntax
 
-You'll notice in this file that each line is concluded with a semicolon (;). This lets the computer know that we're finished with a command. Unlike other languages, JavaScript automatically adds the semicolons at the end of each line, even if the programmer doesn't. However, there are edge cases where omitting them can cause unexpected behavior, so it's a good habit to include them.
+You'll notice in this file that each line is concluded with a semicolon. This lets the computer know that we're finished with a command. Unlike other languages, JavaScript automatically adds the semicolons at the end of each line, even if the programmer doesn't. However, there are edge cases where omitting them can cause unexpected behavior, so it's a good habit to include them.
 
 Unfortunatley, writing comments is different in JavaScript compared to HTML/CSS. Fortunately, it's easier - all you have to do is write two backslashes:
 

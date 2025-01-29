@@ -46,7 +46,9 @@ const firstPerson = {
 
 The variable 'firstPerson' stores a reference (pointer) to the memory address of this object. Inside the actual computer, it would look something like this:
 
-`firstPerson => 0x7ffe5367e044 = name: "Luce"` (the arrow is the pointer, and 0x7ffe5367e044 is an example of a memory address)
+`firstPerson => 0x7ffe5367e044 = name: "Luce"` 
+
+(the arrow is the pointer, and 0x7ffe5367e044 is an example of a memory address)
 
 ```js
 const secondPerson = firstPerson;
@@ -85,7 +87,7 @@ We changed the name of secondPerson to "Tight". What do you think happened to fi
 
 ### Brief note about memory
 
-While JavaScript developers don't directly interact with memory, JavaScript does have an automatic system for memory management. This system automatically allocates new memory to certain addresses when variables are created, and also cleans up any memory that isn't being used. However, understanding how JavaScript handles memory can help you debug issues, especially when dealing with objects or arrays. For instance, if you changed one object, you might see unexpected changes in another object because they share the same reference.
+While JavaScript developers don't directly interact with memory, JavaScript does have an automatic system for memory management. This system automatically allocates new memory to certain addresses when variables are created, and also cleans up any memory that isn't being used. Even though we can't interact with memory, understanding how JavaScript handles memory can help you debug issues, especially when dealing with objects or arrays. For instance, if you changed one object, you might see unexpected changes in another object because they share the same reference.
 
 ### Additional Resources
 

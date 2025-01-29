@@ -1,0 +1,25 @@
+{
+    "products": [
+        {
+            "name": "Blue Shirt",
+            "price": 10.99,
+            "description": "This thing is blue.",
+            "image": "blueShirt.png",
+            "quantity": 1
+        },
+        {
+            "name": "Yellow Shirt",
+            "price": 15.49,
+            "description": "Here is a description for the yellow shirt.",
+            "image": "yellowShirt.png",
+            "quantity": 1
+        },
+        {
+            "name": "Orange Shirt",
+            "price": 1499.99,
+            "description": "Prestigious orange shirt.",
+            "image": "orangeShirt.png",
+            "quantity": 1
+        }
+    ]
+}

@@ -5,13 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
+    <style>
+      div {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: grey;
+      }
+    </style>
+
   </head>
   <body>
     <!-- 4 divs with no styling. -->
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div>Div 1</div>
+    <div>Div 2</div>
+    <div>Div 3</div>
+    <div>Div 4</div>
     <script>
       // Use JavaScript to select all 4 of the divs into an array
       // Shuffle the array into a random order
@@ -36,9 +46,23 @@
       }
 
       function cycleDivs() {
-        const shuffledDivs = shuffleArray(newDivs);
-
+        const shuffledDivs = shuffleArray(Array.from(newDivs));
+        
         let index = 0;
+        
+        // If you want to change the position of the divs:
+        // (make sure to set their position to absolute in styling)
+        // shuffledDivs[0].style.top = "0px";
+        // shuffledDivs[1].style.top = "200px";
+        // shuffledDivs[2].style.top = "400px";
+        // shuffledDivs[3].style.top = "600px";
+        
+        // OR you could do a loop. This does the same thing as above
+        shuffledDivs.forEach((item, index) => {
+          console.log(index);
+          item.style.top = `calc(${index} * 200px)`;
+        });
+
 
         function highlightDiv() {
           if (index < shuffledDivs.length) {

@@ -32,8 +32,9 @@ git pull
 
 This will get updates from the repository on GitHub and download them to your computer.
 
-If it's telling you to save or stash your changes, follow these three commands:
+If the git pull is telling you to save or stash your changes, follow these four commands:
 
+git add .
 git stash save
 git pull
 git stash apply

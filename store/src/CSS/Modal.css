@@ -1,0 +1,75 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Black background with a translucent background */
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* z-index is the depth of elements on the page */
+    z-index: 10;
+}
+
+.modal-content {
+    background-color: white;
+    color: #242424;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    animation-duration: 0.4s;
+    /* This means that it will keep its ending position */
+    animation-fill-mode: forwards;
+}
+
+.modal-appear {
+    animation-name: fadeIn;
+}
+
+.modal-disappear {
+    animation-name: fadeOut;
+}
+
+@keyframes fadeIn {
+    from {
+        /* Starts it transparent and further up on the screen */
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        /* This is the styling for when the animation ends */
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+.modal-img {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+}
+
+.modal-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    color: #242424;
+}
+
+.modal-button:hover {
+    border-color: #242424;
+}

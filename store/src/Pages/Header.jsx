@@ -14,7 +14,7 @@ function Header() {
                         placeholder='Search'
                         name='search' 
                     />
-                    <button><i>&#x1F50D;</i></button>
+                    <button className='search-button'><i><img className='search-icon' src='searchIcon.png' /></i></button>
                 </form>
             </div>
             <div className='cart-holder'>

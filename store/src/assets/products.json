@@ -20,6 +20,48 @@
             "description": "Prestigious orange shirt.",
             "image": "orangeShirt.png",
             "quantity": 1
+        },
+        {
+            "name": "Green Shirt",
+            "price": 15.99,
+            "description": "Green.",
+            "image": "greenShirt.png",
+            "quantity": 1
+        },
+        {
+            "name": "Yellow Pants",
+            "price": 19.99,
+            "description": "Yellow Pants.",
+            "image": "yellowPants.png",
+            "quantity": 1
+        },
+        {
+            "name": "Beige Shirt",
+            "price": 1499.99,
+            "description": "Prestigious beige shirt.",
+            "image": "orangeShirt.png",
+            "quantity": 1
+        },
+        {
+            "name": "Lime Shirt",
+            "price": 10.99,
+            "description": "This thing is lime.",
+            "image": "blueShirt.png",
+            "quantity": 1
+        },
+        {
+            "name": "Azure Shirt",
+            "price": 15.49,
+            "description": "Here is a description for the azure shirt.",
+            "image": "yellowShirt.png",
+            "quantity": 1
+        },
+        {
+            "name": "Plaid Shirt",
+            "price": 1499.99,
+            "description": "Prestigious plaid shirt.",
+            "image": "orangeShirt.png",
+            "quantity": 1
         }
     ]
 }

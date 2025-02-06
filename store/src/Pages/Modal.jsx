@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import '../CSS/Modal.css';
 
-
 function Modal({ product, isOpen, onClose }) {
     const [isAnimatingIn, setIsAnimatingIn] = useState(true);
 

@@ -1,0 +1,78 @@
+#grid-container {
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr 4fr;
+    margin: 2em;
+    gap: 2em;
+}
+
+.cart-buttons {
+    width: 100%;
+    display: flex;
+}
+
+.product-info {
+    position: relative;
+    z-index: 1;
+}
+
+#grid-container:hover > .product::after {
+    opacity: 1;
+}
+
+.product {
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    border: 2px solid black;
+    height: 200px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.product:hover::before {
+    opacity: 1;
+}
+
+.product::before, .product::after {
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0px;
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    transition: opacity 500ms;
+    width: 100%;
+    pointer-events: none;
+}
+
+.product::before {
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y), 
+        rgba(255, 255, 255, 0.06),
+        transparent 40%
+    );
+    z-index: 3;
+}
+
+.product::after {
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y), 
+        rgba(115, 115, 115, 0.4),
+        transparent 40%
+    );
+    z-index: 1;
+}
+
+.product > .product-content {
+    background-color: var(--card-color);
+    border-radius: inherit;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    inset: 1px;
+    padding: 10px;
+    position: absolute;
+    z-index: 2;
+}

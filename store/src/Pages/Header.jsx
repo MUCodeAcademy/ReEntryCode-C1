@@ -1,26 +1,31 @@
 import '../CSS/Header.css';
+import { useCart } from '../Context/CartContext';
+import { NavLink } from 'react-router-dom';
 
 function Header() {
 
+    const { cart } = useCart();
+
     return (
         <div className='topnav'>
-            <a>Home</a>
-            <a>Products</a>
-            <a>Home</a>
+            <NavLink to='/'>Home</NavLink>
+            <NavLink to='/products'>Products</NavLink>
             <div className='search-container'>
                 <form>
                     <input 
                         type='text' 
                         placeholder='Search'
-                        name='search' 
+                        name='search'
                     />
                     <button className='search-button'><i><img className='search-icon' src='searchIcon.png' /></i></button>
                 </form>
             </div>
-            <div className='cart-holder'>
+            <NavLink to='/cart' className='cart-holder'>
                 <img className='cart-icon' src='cartIcon.png' />
-                <p>3</p>
-            </div>
+                <p>
+                    {cart.reduce((acc, item2) => acc + item2.quantity, 0)}
+                </p>
+            </NavLink>
             <div className='dropdown'>
                 <button className='dropbtn'>Login&#9660;</button>
                 <div className='dropdown-content'>

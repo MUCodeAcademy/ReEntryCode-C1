@@ -10,30 +10,45 @@ export function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
 
     function addToCart(product) {
-        setCart((prev) => [...prev, product]);
-    }
+        setCart(prev =>
+          prev.some(item => item.name === product.name) ? prev : [...prev, { ...product, quantity: 1 }]
+        );
+      }
 
     function removeFromCart(product) {
-        // If the item is already in the cart...
-        if (cart.some((item) => item.name === product.name)) {
-            // Find the item and reduce its quantity
-            const item = cart.find((element) => element.name === product.name);
-            item.quantity--;
-            // If its quantity is 0, remove it from the cart
-            if (item.quantity === 0) {
-                setCart((prev) => (
-                    prev.filter((item) => product.name != item.name)
-                ));
-            }
-        }
+        setCart(prev => 
+            prev.filter(item => item.name != product.name)
+        )
     }
 
     function clearCart() {
         setCart([]);
     }
 
+    function increaseQuantity(product) {
+        setCart(prevCart =>
+            prevCart.map(item => {
+                if (item.name === product.name) {
+                    return { ...item, quantity: item.quantity + 1 };
+                }
+                return item;
+            })
+        );
+    }
+
+    function decreaseQuantity(product) {
+        setCart(prevCart =>
+            prevCart.map(item => {
+                if (item.name === product.name) {
+                    return { ...item, quantity: item.quantity - 1 };
+                }
+                return item;
+            })
+        );
+    }
+
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, increaseQuantity, decreaseQuantity }}>
             {children}
         </CartContext.Provider>
     )

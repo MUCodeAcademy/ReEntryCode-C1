@@ -30,9 +30,6 @@ function App() {
 
   return (
     <>
-      <h1>
-        <input />
-      </h1>
       <h2>Deals of the Day</h2>
       {productList.products.map((item, index) => (
         <div key={index}>

@@ -60,7 +60,7 @@ function Products() {
                                 setProductIndex(index);
                             }}>
                                 <h2>{item.name}</h2>
-                                <h4>{item.price}</h4>
+                                <h4>${item.price}</h4>
                                 <p>{item.description}</p>
                                 <img src={item.img} />
                             </div>

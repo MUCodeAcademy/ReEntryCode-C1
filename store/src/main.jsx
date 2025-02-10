@@ -11,6 +11,7 @@ import { UserProvider } from './Context/UserContext.jsx'
 import { CartProvider } from './Context/CartContext.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Products from './Pages/Products.jsx'
+import Confirmation from './Pages/Confirmation.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
               <Route path='/' exact element={<><Home /><App /></>} />
               <Route path='/products' element={<Products />} />
               <Route path='/cart' element={<Cart />} />
+              <Route path='/confirmation' element={<Confirmation />} />
             </Routes>
           <Footer />
         </Router>

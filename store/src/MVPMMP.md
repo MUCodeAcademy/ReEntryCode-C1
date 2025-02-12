@@ -19,11 +19,11 @@
 # Minimum Marketable Product (sorted from easiest-hardest)
 
 - Alphabetize the search results and/or product list
-- Password requirements
+- Password requirements/validation
 - Show/hide password button
 - Ads on the sides
-- If the user is signed in, display their name and a 'sign out' button instead of the 'sign in' button
 - Blinking underline in the search bar when it's focused
+- If the user is signed in, display their name and a 'sign out' button instead of the 'sign in' button
 - Highlight the search term in the search results
 - If they press the enter key, it should autofill the first search result and search
 - Autofill the search bar (when you click on a result it puts it in the input)
@@ -35,9 +35,11 @@
 
 # Bugs
 
-- If they are on the products page, and try to use the search bar, it doesn't search
+- Search button should search and display products with that search term
 
 # Squashed Bugs
+
 - Search results don't disappear when the user clicks off the search bar or when they're done searching
     - Now it doesn't search ☹️
         - Fixed it 🙂
+- If they are on the products page, and try to use the search bar, it doesn't search

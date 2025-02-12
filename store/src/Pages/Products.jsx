@@ -38,6 +38,14 @@ function Products() {
     const animationFrameRef = useRef(null);
 
     useEffect(() => {
+      if (!item) {
+        setProducts(productList.products);
+      } else {
+        setProducts(productList.products.filter(element => element.name == item));
+      }
+    }, [item]);
+
+    useEffect(() => {
         const handleMouseMove = (e) => {
           if (animationFrameRef.current) {
             cancelAnimationFrame(animationFrameRef.current);

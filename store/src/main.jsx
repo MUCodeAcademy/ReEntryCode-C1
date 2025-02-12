@@ -21,7 +21,8 @@ createRoot(document.getElementById('root')).render(
           <Header />
             <Routes>
               <Route path='/' exact element={<><Home /><App /></>} />
-              <Route path='/products' element={<Products />} />
+              {/* Optionally this can go to something like /products/BlueShirt */}
+              <Route path='/products/:item?' element={<Products />} />
               <Route path='/cart' element={<Cart />} />
               <Route path='/confirmation' element={<Confirmation />} />
             </Routes>

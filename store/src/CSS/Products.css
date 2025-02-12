@@ -76,3 +76,24 @@
     position: absolute;
     z-index: 2;
 }
+
+.pagination a {
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-color: black;
+    cursor: pointer;
+}
+
+a.active {
+    border: 2px solid #0247FE;
+}
+
+a.disabled {
+    color: grey;
+    background-color: rgb(21, 21, 21);
+    pointer-events: none;
+    cursor: not-allowed;
+}

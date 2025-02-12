@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 function ModalCheckout({ onClose, subtotal, total, shippingCost, tax }) {
     const [isAnimatingIn, setIsAnimatingIn] = useState(true);
+    const [sameAddress, setSameAddress] = useState(false);
     const [shippingData, setShippingData] = useState({
         email: '',
         shippingAddress: '',
@@ -64,9 +65,11 @@ function ModalCheckout({ onClose, subtotal, total, shippingCost, tax }) {
                     </ul>
                 </aside>
                 <div id='checkout-inputs'>
-                    <input value={shippingData.email} onChange={handleChange} name='email' placeholder='Email' type='email' /> 
+                    <input value={shippingData.email} onChange={handleChange} name='email' placeholder='Email' type='email' />
                     <input value={shippingData.shippingAddress} onChange={handleChange} name='shippingAddress' placeholder='Shipping Address' />
                     <input value={shippingData.billingAddress} onChange={handleChange} name='billingAddress' placeholder='(Optional) Billing Address' />
+                    <label htmlFor='sameAddress'>Shipping Address the same as Billing Address</label>
+                    <input type='radio' value={sameAddress} onChange={() => setSameAddress(sameAddress)} />
                     <div id='location-info'>
                         <input value={shippingData.city} onChange={handleChange} name='city' placeholder='City' />
                         <input value={shippingData.state} onChange={handleChange} name='state' placeholder='State' />

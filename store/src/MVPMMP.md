@@ -2,12 +2,12 @@
 
 <!-- - Header (home, products, cart (with cart items), sign in / sign up, profile) -->
 - Forgot password button
-- Star Rating for each product
 <!-- - Modal for each product -->
 <!-- - Deal of the day on home page -->
-- Autofill search bar
-- Pagination at the bottom
-- Cart checkout (with potential discount code)
+<!-- - Search Bar -->
+<!-- - Pagination at the bottom -->
+<!-- - Cart checkout -->
+- (with potential discount code)?
 <!-- - Footer for contact information / copyright information -->
 - Consistent color scheme and fonts
 - Accessibility
@@ -16,8 +16,28 @@
     - Clear navigation
 - Mobile responsive design
 
-# Minimum Marketable Product
+# Minimum Marketable Product (sorted from easiest-hardest)
 
-- Ads on the side
+- Alphabetize the search results and/or product list
+- Password requirements
+- Show/hide password button
+- Ads on the sides
+- If the user is signed in, display their name and a 'sign out' button instead of the 'sign in' button
+- Blinking underline in the search bar when it's focused
+- Highlight the search term in the search results
+- If they press the enter key, it should autofill the first search result and search
+- Autofill the search bar (when you click on a result it puts it in the input)
+- Sort items based on price (high-low, low-high), or other categories
+- Filter items checkboxes on the side based on certain criteria
+- Star Rating for each product
+- Toggle between different color themes (light/dark, or others)
 - Wishlist
-- Toggle between light and dark theme
+
+# Bugs
+
+- If they are on the products page, and try to use the search bar, it doesn't search
+
+# Squashed Bugs
+- Search results don't disappear when the user clicks off the search bar or when they're done searching
+    - Now it doesn't search ☹️
+        - Fixed it 🙂

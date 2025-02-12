@@ -4,64 +4,136 @@
             "name": "Blue Shirt",
             "price": 10.99,
             "description": "This thing is blue.",
-            "image": "blueShirt.png",
-            "quantity": 1
+            "image": "/blueShirt.png",
+            "quantity": 1,
+            "category": "shirt"
         },
         {
             "name": "Yellow Shirt",
             "price": 15.49,
             "description": "Here is a description for the yellow shirt.",
-            "image": "yellowShirt.png",
-            "quantity": 1
+            "image": "/yellowShirt.png",
+            "quantity": 1,
+            "category": "shirt"
         },
         {
             "name": "Orange Shirt",
             "price": 1499.99,
             "description": "Prestigious orange shirt.",
-            "image": "orangeShirt.png",
-            "quantity": 1
+            "image": "/orangeShirt.png",
+            "quantity": 1,
+            "category": "shirt"
         },
         {
             "name": "Green Shirt",
             "price": 15.99,
             "description": "Green.",
-            "image": "greenShirt.png",
+            "image": "/greenShirt.png",
             "quantity": 1
         },
         {
             "name": "Yellow Pants",
             "price": 19.99,
             "description": "Yellow Pants.",
-            "image": "yellowPants.png",
-            "quantity": 1
+            "image": "/yellowPants.png",
+            "quantity": 1,
+            "category": "pants"
         },
         {
             "name": "Beige Shirt",
             "price": 1499.99,
             "description": "Prestigious beige shirt.",
-            "image": "orangeShirt.png",
-            "quantity": 1
+            "image": "/orangeShirt.png",
+            "quantity": 1,
+            "category": "shirt"
         },
         {
             "name": "Lime Shirt",
             "price": 10.99,
             "description": "This thing is lime.",
-            "image": "blueShirt.png",
-            "quantity": 1
+            "image": "/blueShirt.png",
+            "quantity": 1,
+            "category": "shirt"
         },
         {
             "name": "Azure Shirt",
             "price": 15.49,
             "description": "Here is a description for the azure shirt.",
-            "image": "yellowShirt.png",
-            "quantity": 1
+            "image": "/yellowShirt.png",
+            "quantity": 1,
+            "category": "shirt"
         },
         {
             "name": "Plaid Shirt",
             "price": 1499.99,
             "description": "Prestigious plaid shirt.",
-            "image": "orangeShirt.png",
-            "quantity": 1
+            "image": "/orangeShirt.png",
+            "quantity": 1,
+            "category": "shirt"
+        },
+        {
+            "name": "Beige Pants",
+            "price": 1499.99,
+            "description": "Prestigious beige pants.",
+            "image": "/orangeShirt.png",
+            "quantity": 1,
+            "category": "pants"
+        },
+        {
+            "name": "Lime Pants",
+            "price": 10.99,
+            "description": "This thing is lime.",
+            "image": "/blueShirt.png",
+            "quantity": 1,
+            "category": "pants"
+        },
+        {
+            "name": "Azure Pants",
+            "price": 15.49,
+            "description": "Here is a description for the azure shirt.",
+            "image": "/yellowShirt.png",
+            "quantity": 1,
+            "category": "pants"
+        },
+        {
+            "name": "Plaid Pants",
+            "price": 1499.99,
+            "description": "Prestigious plaid pants.",
+            "image": "/orangeShirt.png",
+            "quantity": 1,
+            "category": "pants"
+        },
+        {
+            "name": "Flannel Shirt",
+            "price": 1499.99,
+            "description": "Prestigious flannel shirt.",
+            "image": "/orangeShirt.png",
+            "quantity": 1,
+            "category": "shirt"
+        },
+        {
+            "name": "Maroon Shirt",
+            "price": 10.99,
+            "description": "This thing is maroon.",
+            "image": "/blueShirt.png",
+            "quantity": 1,
+            "category": "shirt"
+        },
+        {
+            "name": "Red Shirt",
+            "price": 15.49,
+            "description": "Here is a description for the red shirt.",
+            "image": "/yellowShirt.png",
+            "quantity": 1,
+            "category": "shirt"
+        },
+        {
+            "name": "Red Pants",
+            "price": 1499.99,
+            "description": "Prestigious red pants.",
+            "image": "/orangeShirt.png",
+            "quantity": 1,
+            "category": "pants"
         }
     ]
 }

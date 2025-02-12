@@ -3,12 +3,37 @@ import productList from '../assets/products.json';
 import '../CSS/Products.css'
 import Modal from './Modal';
 import { useCart } from '../Context/CartContext';
+import { useParams } from 'react-router-dom';
 
 function Products() {
-    const [products, setProducts] = useState(productList.products);
+    const { item } = useParams();
+    // if (no item) {
+    //   initialItems will be productList  
+    // } otherwise {
+    //   initialItems will be filtered down to just the item
+    // }
+    let initialItems;
+    if (!item) {
+      initialItems = productList.products;
+    } else {
+      initialItems = productList.products.filter(element => element.name == item);
+    }
+
+    const [products, setProducts] = useState(initialItems);
     const [modalOpen, setModalOpen] = useState(false);
     const [productIndex, setProductIndex] = useState();
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 6;
+    // e.g
+    // 1 * 12 = 12
+    // 2 * 12 = 24
+    const lastItem = currentPage * itemsPerPage;
+    const firstItem = lastItem - itemsPerPage; // should always be 0th index
+    const currentProducts = products.slice(firstItem, lastItem); // gets everything from the first item to the last item
+    const pageCount = Math.ceil(products.length / itemsPerPage);
+
     const { cart, increaseQuantity, decreaseQuantity, addToCart, removeFromCart } = useCart();
+
     const gridRef = useRef(null);
     const animationFrameRef = useRef(null);
 
@@ -46,13 +71,13 @@ function Products() {
         <>
             <h1>Products</h1>
             {modalOpen &&
-                <Modal 
-                    product={products[productIndex]}
+                <Modal
+                    product={currentProducts[productIndex]}
                     onClose={() => setModalOpen(false)}
                 />
             }
             <div id='grid-container' ref={gridRef}>
-                {products.map((item, index) => (
+                {currentProducts.map((item, index) => (
                     <div className='product' key={index}>
                         <div className='product-content'>
                             <div className='product-info' onClick={() => {
@@ -83,6 +108,13 @@ function Products() {
                         </div>
                     </div>
                 ))}
+            </div>
+            <div className='pagination'>
+              <a className={currentPage == 1 ? 'disabled' : ''} onClick={() => setCurrentPage(currentPage - 1)}>&laquo;</a>
+              {Array.from({ length: pageCount}, (_, index) => (
+                <a className={currentPage == index + 1 ? 'active' : ''} key={index} onClick={() => setCurrentPage(index + 1)}>{index + 1}</a>
+              ))}
+              <a onClick={() => setCurrentPage(currentPage == pageCount ? 1 : currentPage + 1)}>&raquo;</a>
             </div>
         </>
     )

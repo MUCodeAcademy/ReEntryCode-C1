@@ -13,10 +13,11 @@
 
 */
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useCart } from "../Context/CartContext";
 import taxRates from '../assets/taxRates.json';
 import ModalCheckout from "./ModalCheckout";
+import '../CSS/Products.css'
 
 function Cart() {
     const [subtotal, setSubtotal] = useState(0);
@@ -26,6 +27,9 @@ function Cart() {
     const [modalOpen, setModalOpen] = useState(false);
 
     const { cart, increaseQuantity, decreaseQuantity, removeFromCart, clearCart } = useCart();
+
+    const gridRef = useRef(null);
+    const animationFrameRef = useRef(null);
 
     /*
     each item                                                                                                               
@@ -40,34 +44,71 @@ function Cart() {
         cart.forEach((item) => {
             tempTotal += (item.price * item.quantity);
         });
-        // console.log(tempTotal);
         if (tempTotal != 0) {
             setSubtotal(tempTotal.toFixed(2));
             let totalTax = ((tempTotal + shippingCost) * tax);
-            // console.log(totalTax);
             setTotal(((tempTotal + shippingCost) + totalTax).toFixed(2));
+        } else {
+            setSubtotal(0);
+            setTotal(0);
         }
     }, [cart]);
 
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+          if (animationFrameRef.current) {
+            cancelAnimationFrame(animationFrameRef.current);
+          }
+    
+          animationFrameRef.current = requestAnimationFrame(() => {
+            if (!gridRef.current) return;
+    
+            for (const card of gridRef.current.getElementsByClassName("product")) {
+              const rect = card.getBoundingClientRect(),
+                x = e.clientX - rect.left,
+                y = e.clientY - rect.top;
+    
+              card.style.setProperty("--mouse-x", `${x}px`);
+              card.style.setProperty("--mouse-y", `${y}px`);
+            }
+          });
+        };
+    
+        document.addEventListener("mousemove", handleMouseMove);
+    
+        return () => {
+          document.removeEventListener("mousemove", handleMouseMove);
+          if (animationFrameRef.current) {
+            cancelAnimationFrame(animationFrameRef.current);
+          }
+        };
+      }, []);
+
     return (
-        <div>
+        <>
             <h1>Cart</h1>
             {modalOpen &&
                 <ModalCheckout onClose={() => setModalOpen(false)} subtotal={subtotal} total={total} shippingCost={shippingCost} tax={tax} />
             }
-            <div id="cart-container">
+            <div id='grid-container' ref={gridRef}>
                 {cart.map((item, index) => (
-                    <div className="cart-item" key={index}>
-                        <h2>{item.name}</h2>
-                        <h4>${item.price}</h4>
-                        <p>{item.description}</p>
-                        <img src={item.img} />
-                        <button onClick={() => { 
-                            cart.find(element => element.name === item.name).quantity <= 1 ? removeFromCart(item) : decreaseQuantity(item)
-                        }}>-</button>
-                        <p>Quantity: {cart.find(element => element.name === item.name).quantity}</p>
-                        <button onClick={() => increaseQuantity(item)}>+</button>
-                        <button onClick={() => removeFromCart(item)} style={{ backgroundColor: 'red' }}>Delete</button>
+                    <div className='product' key={index}>
+                        <div className='product-content'>
+                            <div className='product-info'>
+                                <h2>{item.name}</h2>
+                                <h4>${item.price}</h4>
+                                <p>{item.description}</p>
+                                <img src={item.img} />
+                            </div>
+                            <div className='cart-buttons'>
+                                <button onClick={() => { 
+                                    cart.find(element => element.name === item.name).quantity <= 1 ? removeFromCart(item) : decreaseQuantity(item)
+                                }}>-</button>
+                                <p>Quantity: {cart.find(element => element.name === item.name).quantity}</p>
+                                <button onClick={() => increaseQuantity(item)}>+</button>
+                                <button onClick={() => removeFromCart(item)} style={{ backgroundColor: 'red' }}>Delete</button>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
@@ -86,7 +127,7 @@ function Cart() {
                 </ul>
                 <button onClick={() => setModalOpen(true)}>Checkout</button>
             </aside>        
-        </div>
+        </>
     )
 }
 

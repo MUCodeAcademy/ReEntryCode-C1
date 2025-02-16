@@ -134,6 +134,23 @@
             "image": "/orangeShirt.png",
             "quantity": 1,
             "category": "pants"
+        },
+        {
+            "name": "Microphone",
+            "price": 199.99,
+            "description": "Mic.",
+            "image": "/mic.png",
+            "quantity": 1,
+            "category": "mic"
+        },
+        {
+            "name": "Amp",
+            "price": 399.99,
+            "description": "Amplifier.",
+            "image": "/amp.png",
+            "quantity": 1,
+            "category": "amp"
         }
+
     ]
 }

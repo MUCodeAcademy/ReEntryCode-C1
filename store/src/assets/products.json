@@ -150,6 +150,22 @@
             "image": "/amp.png",
             "quantity": 1,
             "category": "amp"
+        },
+        {
+            "name": "Mouse",
+            "price": 399.99,
+            "description": "Mouse.",
+            "image": "/amp.png",
+            "quantity": 1,
+            "category": "amp"
+        },
+        {
+            "name": "Mouse Pad",
+            "price": 399.99,
+            "description": "Mouse Pad.",
+            "image": "/amp.png",
+            "quantity": 1,
+            "category": "amp"
         }
 
     ]

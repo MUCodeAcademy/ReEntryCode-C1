@@ -85,6 +85,7 @@
     border-radius: 50%;
     background-color: black;
     cursor: pointer;
+    user-select: none;
 }
 
 a.active {

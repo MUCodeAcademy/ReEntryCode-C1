@@ -6,13 +6,27 @@ import { useCart } from '../Context/CartContext';
 import { useParams } from 'react-router-dom';
 
 function Products() {
+    productList.products = productList.products.sort((a, b) => {
+      const nameA = a.name.toUpperCase();
+      const nameB = b.name.toUpperCase();
+      if (nameA < nameB) {
+          return -1; // sort A before B
+      }
+      if (nameA > nameB) {
+          return 1; // sort A after B
+      }
+
+      // if they're equal
+      return 0;
+    });
+
     const { item } = useParams();
+    let initialItems;
     // if (no item) {
     //   initialItems will be productList  
     // } otherwise {
     //   initialItems will be filtered down to just the item
     // }
-    let initialItems;
     if (!item) {
       initialItems = productList.products;
     } else {
@@ -23,7 +37,7 @@ function Products() {
     const [modalOpen, setModalOpen] = useState(false);
     const [productIndex, setProductIndex] = useState();
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 6;
+    const itemsPerPage = 8;
     // e.g
     // 1 * 12 = 12
     // 2 * 12 = 24
@@ -41,7 +55,7 @@ function Products() {
       if (!item) {
         setProducts(productList.products);
       } else {
-        setProducts(productList.products.filter(element => element.name == item));
+        setProducts(productList.products.filter(element => element.name.toLowerCase().includes(item.toLowerCase())))
       }
     }, [item]);
 
@@ -77,54 +91,57 @@ function Products() {
 
     return (
         <>
-            <h1>Products</h1>
-            {modalOpen &&
-                <Modal
-                    product={currentProducts[productIndex]}
-                    onClose={() => setModalOpen(false)}
-                />
-            }
-            <div id='grid-container' ref={gridRef}>
-                {currentProducts.map((item, index) => (
-                    <div className='product' key={index}>
-                        <div className='product-content'>
-                            <div className='product-info' onClick={() => {
-                                setModalOpen(true)
-                                setProductIndex(index);
-                            }}>
-                                <h2>{item.name}</h2>
-                                <h4>${item.price}</h4>
-                                <p>{item.description}</p>
-                                <img src={item.img} />
-                            </div>
-                            <div className='cart-buttons'>
-                            {cart.some(element => element.name === item.name) ? (
-                                <>
-                                    <button onClick={() => { 
-                                        cart.find(element => element.name === item.name).quantity <= 1 ? removeFromCart(item) : decreaseQuantity(item);
-                                    }}>-</button>
-                                    <p>Quantity: {cart.find(element => element.name === item.name).quantity}</p>
-                                    <button onClick={() => increaseQuantity(item)}>+</button>
-                                    <button onClick={() => removeFromCart(item)} style={{ backgroundColor: 'red' }}>Delete</button>
-                                </>
-                            )
-                            :
-                            (
-                                <button onClick={() => addToCart(item)}>Add to Cart</button>
-                            )}
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-            <div className='pagination'>
-              <a className={currentPage == 1 ? 'disabled' : ''} onClick={() => setCurrentPage(currentPage - 1)}>&laquo;</a>
-              {Array.from({ length: pageCount}, (_, index) => (
-                <a className={currentPage == index + 1 ? 'active' : ''} key={index} onClick={() => setCurrentPage(index + 1)}>{index + 1}</a>
+          {item &&
+            <p style>Search results for: {item}</p>
+          }
+          <h1>Products</h1>
+          {modalOpen &&
+            <Modal
+                product={currentProducts[productIndex]}
+                onClose={() => setModalOpen(false)}
+            />
+          } 
+          <div id='grid-container' ref={gridRef}>
+              {currentProducts.map((item, index) => (
+                  <div className='product' key={index}>
+                      <div className='product-content'>
+                          <div className='product-info' onClick={() => {
+                              setModalOpen(true)
+                              setProductIndex(index);
+                          }}>
+                              <h2>{item.name}</h2>
+                              <h4>${item.price}</h4>
+                              <p>{item.description}</p>
+                              <img src={item.img} />
+                          </div>
+                          <div className='cart-buttons'>
+                          {cart.some(element => element.name === item.name) ? (
+                              <>
+                                  <button onClick={() => { 
+                                      cart.find(element => element.name === item.name).quantity <= 1 ? removeFromCart(item) : decreaseQuantity(item);
+                                  }}>-</button>
+                                  <p>Quantity: {cart.find(element => element.name === item.name).quantity}</p>
+                                  <button onClick={() => increaseQuantity(item)}>+</button>
+                                  <button onClick={() => removeFromCart(item)} style={{ backgroundColor: 'red' }}>Delete</button>
+                              </>
+                          )
+                          :
+                          (
+                              <button onClick={() => addToCart(item)}>Add to Cart</button>
+                          )}
+                          </div>
+                      </div>
+                  </div>
               ))}
-              <a onClick={() => setCurrentPage(currentPage == pageCount ? 1 : currentPage + 1)}>&raquo;</a>
-            </div>
-        </>
+          </div>
+          <div className='pagination'>
+            <a className={currentPage == 1 ? 'disabled' : ''} onClick={() => setCurrentPage(currentPage - 1)}>&laquo;</a>
+            {Array.from({ length: pageCount}, (_, index) => (
+              <a className={currentPage == index + 1 ? 'active' : ''} key={index} onClick={() => setCurrentPage(index + 1)}>{index + 1}</a>
+            ))}
+            <a onClick={() => setCurrentPage(currentPage == pageCount ? 1 : currentPage + 1)}>&raquo;</a>
+          </div>
+      </>
     )
 }
 

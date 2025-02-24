@@ -14,8 +14,8 @@ Extra Weeks: Until May 30, 2025
 
 Module 3 (React) - February 28th
 
-Module 4 (Backend) and Module 5 (Testing) - April 18th
+Module 4 (Backend) and Module 5 (Testing) - April 17th
 
-Module 6 (final project) - April 21st to May 16th
+Module 6 (final project) - April 22nd to May 16th
 
 Extra stuff - May 19th to May 30th

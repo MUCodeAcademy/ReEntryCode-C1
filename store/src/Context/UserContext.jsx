@@ -13,6 +13,7 @@ export function useUser() {
 // This will store user information and provide it to the entire application
 export function UserProvider({ children }) {
     const [currentUser, setCurrentUser] = useState("");
+    const [currentPassword, setCurrentPassword] = useState("");
 
     // Any functions that you want to run go here
     function setUser(username) {
@@ -23,9 +24,18 @@ export function UserProvider({ children }) {
         setCurrentUser("");
     }
 
+    function setPasswordContext(password) {
+        console.log(password);
+        setCurrentPassword(password);
+    }
+
+    function clearPassword() {
+        setCurrentPassword("");
+    }
+
     // This return provides our state and our functions to every page
     return (
-        <UserContext.Provider value={{ currentUser, setUser, clearUser }}>
+        <UserContext.Provider value={{ currentUser, setUser, clearUser, currentPassword, setPasswordContext, clearPassword }}>
             {children}
         </UserContext.Provider>
     )

@@ -1,7 +1,7 @@
 # Minimum Viable Product
 
 <!-- - Header (home, products, cart (with cart items), sign in / sign up, profile) -->
-- Forgot password button
+<!-- - Forgot password button -->
 <!-- - Modal for each product -->
 <!-- - Deal of the day on home page -->
 <!-- - Search Bar -->
@@ -20,22 +20,35 @@
 
 <!-- - Alphabetize the search results and/or product list -->
 <!-- - Highlight the search term in the search results -->
-- Password requirements/validation
-- Show/hide password button
-- Ads on the sides
-- Blinking underline in the search bar when it's focused
-- If the user is signed in, display their name and a 'sign out' button instead of the 'sign in' button
-- If they press the enter key, it should autofill the first search result and search
-- Autofill the search bar (when you click on a result it puts it in the input)
-- Sort items based on price (high-low, low-high), or other categories
-- Checkboxes on the side to filter items based on certain criteria
-- Star Rating for each product
+<!-- - Blinking underline in the search bar when it's focused -->
+<!-- - If they press the enter key, it should autofill the first search result and search -->
+<!-- - Autofill the search bar (when you click on a result it puts it in the input) -->
+<!-- - Add a scrollbar to the search results -->
+<!-- - "No results found" if there are no search results -->
+<!-- - Password requirements/validation options:
+    - Minimum password length
+    - Needs at least one special character ($, #, *, etc)
+    - At least one upper case and lower case letter
+    - At least one number
+    - Confirm password input
+- Show/hide password button -->
+
+<!-- - Save the user's username when they click login or register (login and register will do the same thing for now) -->
+<!-- - If the user is signed in, display their name and a 'sign out' button instead of the 'sign in' button -->
+
 - Toggle between different color themes (light/dark, or others)
-- Wishlist
+- Ads on the sides (different ads)
+- Star Rating for each product
+
+# Extra
+
+- Make sure that it's responsive on mobile
+- Checkboxes on the side to filter items based on certain criteria
+- Sort items based on price (high-low, low-high), or other categories
+<!-- - Wishlist -->
 
 # Bugs
 
-- Search button should search and display products with that search term
 
 # Squashed Bugs
 
@@ -43,3 +56,5 @@
     <!-- - Now it doesn't search ☹️ -->
         <!-- - Fixed it 🙂 -->
 <!-- - If they are on the products page, and try to use the search bar, it doesn't search -->
+<!-- - Search button should search and display products with that search term -->
+<!-- - Product page is not alphabetized -->

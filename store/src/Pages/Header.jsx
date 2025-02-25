@@ -14,6 +14,7 @@ function Header() {
     const [password, setPassword] = useState("");
     const [validPassword, setValidPassword] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
+    const [rotation, setRotation] = useState(45);
 
     const { currentUser, setUser, clearUser, currentPassword, setPasswordContext, clearPassword } = useUser();
     const { theme, toggleTheme } = useTheme();
@@ -167,7 +168,17 @@ function Header() {
                     {cart.reduce((acc, item2) => acc + item2.quantity, 0)}
                 </p>
             </NavLink>
-            <span className='theme-icon' onClick={toggleTheme}></span>
+            <span
+                className='theme-icon'
+                onClick={() => {
+                    toggleTheme();
+                    setRotation(prev => prev + 180);
+                }}
+                style={{
+                    transform: `rotate(${rotation}deg)`,
+                    transition: 'transform .5s'
+                }}
+            ></span>
             {/* Ternary operator */}
             {currentUser ? (
                 <div className='dropdown'>

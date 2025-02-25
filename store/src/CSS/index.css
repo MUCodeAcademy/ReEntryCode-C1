@@ -75,10 +75,8 @@ button:focus-visible {
     background-color: #c7c7c7;
   }
   .theme-icon {
-    transform: rotate(-135deg);
     background-color: black;
     border-radius: 50%;
-    transition: .5s;
   }
   .sign-up {
     background-color: #242424;
@@ -92,9 +90,7 @@ button:focus-visible {
     background-color: #242424;
   }
   .theme-icon {
-    transform: rotate(45deg);
     background-color: white;
     border-radius: 50%;
-    transition: .5s;
   }
 }

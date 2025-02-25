@@ -36,7 +36,7 @@
 <!-- - Save the user's username when they click login or register (login and register will do the same thing for now) -->
 <!-- - If the user is signed in, display their name and a 'sign out' button instead of the 'sign in' button -->
 
-- Toggle between different color themes (light/dark, or others)
+<!-- - Toggle between different color themes (light/dark, or others) -->
 - Ads on the sides (different ads)
 - Star Rating for each product
 

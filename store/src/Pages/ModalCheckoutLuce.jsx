@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../CSS/ModalCheckout.css';
 import { useCart } from '../Context/CartContext.jsx';
 import { useNavigate } from 'react-router-dom';
@@ -39,6 +39,23 @@ function ModalCheckout({ onClose, subtotal, total, shippingCost, tax }) {
         // Mock send an e-mail receipt
         // Go to confirmation page
         navigate('/confirmation');
+    }
+
+    useEffect(() => {
+        typeLoop();
+    }, []);
+
+    let i = 0;
+    let text = "aklsdjflksadf";
+    let speed = 100;
+
+    function typeLoop() { 
+        if (i < text.length) {
+            console.log(text.charAt(i));
+            setType(prev => prev += text.charAt(i));
+        }
+        i++
+        setTimeout(typeLoop, speed);
     }
 
     return (

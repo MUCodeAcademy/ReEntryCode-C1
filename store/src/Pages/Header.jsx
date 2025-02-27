@@ -7,6 +7,7 @@ import { useUser } from '../Context/UserContext';
 import { useTheme } from '../Context/ThemeContext';
 
 function Header() {
+    const ads = [1, 2, 3, 4, 5];
     const [searchTerm, setSearchTerm] = useState("");
     const [isFocused, setIsFocused] = useState(false);
     const [searchResults, setSearchResults] = useState([]);
@@ -15,6 +16,8 @@ function Header() {
     const [validPassword, setValidPassword] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const [rotation, setRotation] = useState(45);
+    const [firstAd, setFirstAd] = useState(getRandomAd());
+    const [secondAd, setSecondAd] = useState(getRandomAdDifferent());
 
     const { currentUser, setUser, clearUser, currentPassword, setPasswordContext, clearPassword } = useUser();
     const { theme, toggleTheme } = useTheme();
@@ -73,6 +76,42 @@ function Header() {
             productList.products.filter(element => element.name.toUpperCase().startsWith(searchTerm.toUpperCase()))
         );
     }, [searchTerm]);
+
+    
+
+    // 1. States for the ads that it picks
+    // 2. Run this function when the page loads to get an ad and put it in the first state
+    // 3. Run this function again and see if the ad that it picked is already in the first state
+    // 4. If it is, run it again, otherwise put that ad in the second state
+    function getRandomAd() {
+        const random = Math.floor(Math.random() * ads.length);
+        const ad = ads[random]; // this will get the number from the ads array
+
+        // if the ad it received is in the first state, run this function again.
+        // Otherwise, return ad
+        // if (firstAd) {
+        //     if (firstAd === ad) {
+        //         getRandomAd();
+        //     } else {
+        //         return ad; // When this function finishes, it will give you the ad that it chose
+        //     }
+        // }
+
+        // firstAd === ad ? getRandomAd() : ad;
+
+        return ad;
+    }
+
+    function getRandomAdDifferent() {
+        const random = Math.floor(Math.random() * ads.length);
+        const ad = ads[random]; // this will get the number from the ads array
+
+        if (ad === firstAd) {
+            getRandomAdDifferent();
+        } else {
+            return ad;
+        }
+    }
 
     return (
         <div className='topnav'>

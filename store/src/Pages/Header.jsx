@@ -8,8 +8,8 @@ import { useTheme } from '../Context/ThemeContext';
 
 function Header() {
     const ads = [1, 2, 3, 4, 5];
-    const [searchTerm, setSearchTerm] = useState("");
     const [isFocused, setIsFocused] = useState(false);
+    const [searchTerm, setSearchTerm] = useState("");
     const [searchResults, setSearchResults] = useState([]);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -78,7 +78,6 @@ function Header() {
     }, [searchTerm]);
 
     
-
     // 1. States for the ads that it picks
     // 2. Run this function when the page loads to get an ad and put it in the first state
     // 3. Run this function again and see if the ad that it picked is already in the first state
@@ -111,6 +110,12 @@ function Header() {
         } else {
             return ad;
         }
+    }
+
+    [[1, 2, 3,], [4, 5, 6]]
+
+    function handleClick() {
+        searchRef.current.style.color = 'blue';
     }
 
     return (

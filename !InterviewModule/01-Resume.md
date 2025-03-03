@@ -46,6 +46,7 @@ If you want some project ideas, check out [OtherProjects.md](../!ProjectList/Oth
     - Jest
     - MySQL
     - WebSockets
+    - Express
 
 ## Examples
 

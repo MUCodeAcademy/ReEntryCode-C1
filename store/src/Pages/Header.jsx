@@ -22,6 +22,23 @@ function Header() {
     const { currentUser, setUser, clearUser, currentPassword, setPasswordContext, clearPassword } = useUser();
     const { theme, toggleTheme } = useTheme();
 
+    function register() {
+        // Makes a request to our server's port, specifically to the 'login' endpoint
+        fetch('http://localhost:3000/register', {
+            method: 'POST', // Specifying that we're making a POST request (sending data)
+             // Headers is for metadata (extra information) about the request to help the browser/server understand how to handle it
+            headers: {
+                'Content-Type': 'application/json', // Telling the server that the data we're sending is a JSON
+            },
+            // The body is the main content that we want to send
+            body: JSON.stringify({ username: username, password: password }) // We want to send their username and password as a JSON string to our server
+        })
+        // Once the request completes, these .then statements will run
+        .then(response => response.json()) // Takes our response from the server and parses it as a JSON
+        .then(data => console.log(data)) // Once it's parsed as a JSON, we just log it to the console
+        .catch(error => console.error(error)); // If there was an error, log that to the console
+    }
+
     // Password and username states (and potentially a passwordFocus state)
     // When they type in the inputs it saves it into its respective state
     // Display the password requirements at some point
@@ -256,8 +273,8 @@ function Header() {
                         <li>Password must include at least one special character.</li>
                     </ul>
                     <button onClick={() => setShowPassword(!showPassword)}>{showPassword ? 'Hide Password' : 'Show Password'}</button>
-                    <button disabled={validPassword ? false : true} onClick={() => { setUser(username); setPasswordContext(password); setPassword("")}}>Login</button>
-                    <button disabled={validPassword ? false : true} onClick={() => { setUser(username); setPasswordContext(password); setPassword("")}}>Register</button>
+                    <button disabled={validPassword ? false : true} onClick={() => { setUser(username); setPassword("")}}>Login</button>
+                    <button disabled={validPassword ? false : true} onClick={() => { setUser(username); register()}}>Register</button>
                 </div>
             </div>
             )}

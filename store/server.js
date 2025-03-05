@@ -3,6 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mysql from 'mysql';
 import { v4 as uuid } from 'uuid';
+import argon2 from 'argon2';
 dotenv.config();
 // import posts from './placeholder.json' assert { type: 'json' };
 
@@ -36,12 +37,19 @@ app.get('/', (req, res) => res.send('Hello'));
 //     res.send(userPosts);
 // });
 
-app.post('/register', (req, res) => {
+app.post('/register', async (req, res) => {
     // Gets the username variable from the request body
     const username = req.body.username;
     const password = req.body.password;
     const picture = req.body.picture;
     const userId = uuid();
+
+    let hashedPassword;
+    try {
+        hashedPassword = await argon2.hash(password);
+    } catch (error) {
+        console.log(error);
+    }
 
     let profilePicture = null;
     if (picture) {
@@ -50,7 +58,7 @@ app.post('/register', (req, res) => {
 
     connection.query(
         "INSERT INTO users (user_id, user_password, user_username, user_picture) VALUES (?, ?, ?, ?)",
-        [userId, password, username, profilePicture],
+        [userId, hashedPassword, username, profilePicture],
         function (err, rows, fields) {
             if (err) console.error(err);
 
@@ -60,7 +68,7 @@ app.post('/register', (req, res) => {
     );
 
     // Send the response back as a JSON
-    res.json(`Your username is ${username} and password is: ${password}`);
+    res.json(`Register Successful`);
 });
 
 // app.listen(port);

@@ -13,6 +13,7 @@ import { ThemeProvider } from './Context/ThemeContext.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Products from './Pages/Products.jsx'
 import Confirmation from './Pages/Confirmation.jsx'
+import Register from './Pages/Register.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -28,6 +29,7 @@ createRoot(document.getElementById('root')).render(
                 <Route path='/products/:item?' element={<Products />} />
                 <Route path='/cart' element={<Cart />} />
                 <Route path='/confirmation' element={<Confirmation />} />
+                <Route path='/register' element={<Register />} />
               </Routes>
             <Footer />
           </Router>

@@ -16,8 +16,7 @@ function Header() {
     const [validPassword, setValidPassword] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const [rotation, setRotation] = useState(45);
-    const [firstAd, setFirstAd] = useState(getRandomAd());
-    const [secondAd, setSecondAd] = useState(getRandomAdDifferent());
+    const [validUsername, setValidUsername] = useState(null);
 
     const { currentUser, setUser, clearUser, currentPassword, setPasswordContext, clearPassword } = useUser();
     const { theme, toggleTheme } = useTheme();
@@ -39,6 +38,40 @@ function Header() {
         .catch(error => console.error(error)); // If there was an error, log that to the console
     }
 
+    function checkUsername() {
+        fetch('http://localhost:3000/check-username', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username: username })
+        })
+        .then(response => response.json())
+        .then(data => setValidUsername(data))
+        .catch(error => console.error(error));
+    }
+    
+    function login() {
+        fetch('http://localhost:3000/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username: username, password: password })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data === 'Login successful') {
+                console.log(data);
+                setUser(username);
+            } else {
+                alert(data);
+            }
+        })
+        .catch(error => console.error(error));
+    }
+    
+    
     // Password and username states (and potentially a passwordFocus state)
     // When they type in the inputs it saves it into its respective state
     // Display the password requirements at some point
@@ -257,6 +290,7 @@ function Header() {
                         type='text'
                         placeholder='Username'
                         name='username'
+                        onBlur={checkUsername}
                         onChange={(e) => setUsername(e.target.value)}
                     />
                     <input
@@ -266,6 +300,12 @@ function Header() {
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     <ul className='password-requirements'>
+                        {validUsername && 
+                            <>
+                                {/* <li className={`${validUsername === 'Username available' ? 'green' : 'red'}`}>{validUsername}</li> */}
+                                <li style={validUsername === 'Username available' ? {color: 'green'} : {color: 'red'}}>{validUsername}</li>
+                            </>
+                        }
                         <li>Password must be at least 8 characters.</li>
                         <li>Password must include at least one uppercase character.</li>
                         <li>Password must include at least one lowercase character.</li>
@@ -273,7 +313,7 @@ function Header() {
                         <li>Password must include at least one special character.</li>
                     </ul>
                     <button onClick={() => setShowPassword(!showPassword)}>{showPassword ? 'Hide Password' : 'Show Password'}</button>
-                    <button disabled={validPassword ? false : true} onClick={() => { setUser(username); setPassword("")}}>Login</button>
+                    <button disabled={validPassword ? false : true} onClick={() => { login(); setPassword("")}}>Login</button>
                     <button disabled={validPassword ? false : true} onClick={() => { setUser(username); register()}}>Register</button>
                 </div>
             </div>

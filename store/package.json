@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "backend": "nodemon server"
+    "server": "nodemon server"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

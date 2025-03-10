@@ -3,7 +3,13 @@
     grid-template-columns: 4fr 4fr 4fr 4fr;
     margin: 2em;
     gap: 2em;
-    height: 50vh;
+    height: 50%;
+}
+
+@media (max-width: 600px) {
+    #grid-container {
+        grid-template-columns: 4fr;
+    }
 }
 
 .cart-buttons {
@@ -76,6 +82,11 @@
     padding: 10px;
     position: absolute;
     z-index: 2;
+}
+
+.pagination {
+    /* position: fixed; */
+    grid-column: 1 / span 4;
 }
 
 .pagination a {

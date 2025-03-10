@@ -117,6 +117,12 @@
     margin-left: -10px;
     margin-top: -3px;
 }
+
+@media (max-width: 600px) {
+    .search-icon {
+        width: 100%;
+    }
+}
   
 .cart-holder {
     cursor: pointer;

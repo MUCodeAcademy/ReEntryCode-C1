@@ -133,13 +133,13 @@ function Products() {
                       </div>
                   </div>
               ))}
-          </div>
-          <div className='pagination'>
-            <a className={currentPage == 1 ? 'disabled' : ''} onClick={() => setCurrentPage(currentPage - 1)}>&laquo;</a>
-            {Array.from({ length: pageCount}, (_, index) => (
-              <a className={currentPage == index + 1 ? 'active' : ''} key={index} onClick={() => setCurrentPage(index + 1)}>{index + 1}</a>
-            ))}
-            <a onClick={() => setCurrentPage(currentPage == pageCount ? 1 : currentPage + 1)}>&raquo;</a>
+            <div className='pagination'>
+              <a className={currentPage == 1 ? 'disabled' : ''} onClick={() => setCurrentPage(currentPage - 1)}>&laquo;</a>
+              {Array.from({ length: pageCount}, (_, index) => (
+                <a className={currentPage == index + 1 ? 'active' : ''} key={index} onClick={() => setCurrentPage(index + 1)}>{index + 1}</a>
+              ))}
+              <a onClick={() => setCurrentPage(currentPage == pageCount ? 1 : currentPage + 1)}>&raquo;</a>
+            </div>
           </div>
       </>
     )

@@ -61,3 +61,11 @@ git pull
 
 <!-- retrieves everything in your stash -->
 git stash apply
+
+## MAMP ERROR FIXING
+
+<!-- This one doesn't work if there's stuff in data directory -->
+mysqld --initialize-insecure --basedir="C:\MAMP\bin\mysql" --datadir="C:\MAMP\db\mysql"
+
+<!-- Starts the server -->
+mysqld --port=3306 --datadir="C:\MAMP\db\mysql"

@@ -16,7 +16,7 @@
 
 7. How would you get all users from a database (assume there's a 'users' table) sorted in descending order from oldest to youngest?
 
-8. What is the difference between `HAVING someColumn < 10` and `WHERE someColumn <10`?
+8. What is the difference between `HAVING someColumn < 10` and `WHERE someColumn < 10`?
 
 9. How would you add up all numbers in a column for all the rows that match the same criteria?
 

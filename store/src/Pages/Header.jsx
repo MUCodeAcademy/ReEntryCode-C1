@@ -20,6 +20,7 @@ function Header() {
 
     const { currentUser, setUser, clearUser, currentPassword, setPasswordContext, clearPassword } = useUser();
     const { theme, toggleTheme } = useTheme();
+    const { cart, clearCart, restoreCart } = useCart();
 
     function register() {
         // Makes a request to our server's port, specifically to the 'login' endpoint
@@ -64,13 +65,58 @@ function Header() {
             if (data === 'Login successful') {
                 console.log(data);
                 setUser(username);
+                getCart();
             } else {
                 alert(data);
             }
         })
         .catch(error => console.error(error));
     }
-    
+
+    function saveCart() {
+        fetch('http://localhost:3000/send-to-cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username: username, cart: cart })
+        })
+        .then(response => response.json())
+        .then(() => clearCart())
+        .catch(error => console.error(error));
+    }
+
+    function getCart() {
+        fetch('http://localhost:3000/get-cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ username: username })
+        })
+        .then(response => response.json())
+        .then((data) => {
+            if (data.length != 0) {
+                const tempArray = [];
+                data.forEach(item => {
+                    const product = productList.products.find(element => element.name == item.product_name);
+                    product.quantity = item.product_quantity;
+                    tempArray.push(product);
+                });
+                restoreCart(tempArray);
+            }
+        })
+        .catch(error => console.error(error));
+    }
+
+    /*
+
+    1. Check errors in terminal and console
+    2. Check network tab to see the requests being sent/received from the server
+        - Check the payload/response tabs to see if the payload is sending the information and sending a response
+    3. console.log stuff in the saveCart function or on the server to see if the data is there at all
+
+    */
     
     // Password and username states (and potentially a passwordFocus state)
     // When they type in the inputs it saves it into its respective state
@@ -117,7 +163,7 @@ function Header() {
         setValidPassword(password && validUpperCase && validLowerCase && validLength && validNumber && validSpecial);
     }, [password, currentUser]);
 
-    const { cart } = useCart();
+    
     const searchRef = useRef(null);
     const navigate = useNavigate();
 
@@ -278,7 +324,7 @@ function Header() {
                 <div className='dropdown'>
                     <button className='dropbtn'>{currentUser} &#9660;</button>
                     <div className='dropdown-content'>
-                        <button onClick={() => clearUser()}>Logout</button>
+                        <button onClick={() => { saveCart(); clearUser() }}>Logout</button>
                     </div>
                 </div>
             ) : (

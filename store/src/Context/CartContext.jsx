@@ -9,11 +9,15 @@ export function useCart() {
 export function CartProvider({ children }) {
     const [cart, setCart] = useState([]);
 
+    function restoreCart(tempArray) {
+        setCart(tempArray);
+    }
+
     function addToCart(product) {
         setCart(prev =>
-          prev.some(item => item.name === product.name) ? prev : [...prev, { ...product, quantity: 1 }]
+            prev.some(item => item.name === product.name) ? prev : [...prev, { ...product, quantity: 1 }]
         );
-      }
+    }
 
     function removeFromCart(product) {
         setCart(prev => 
@@ -48,7 +52,7 @@ export function CartProvider({ children }) {
     }
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, increaseQuantity, decreaseQuantity }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, clearCart, increaseQuantity, decreaseQuantity, restoreCart }}>
             {children}
         </CartContext.Provider>
     )

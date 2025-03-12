@@ -126,6 +126,78 @@ app.post('/login', (req, res) => {
     )
 });
 
+app.post('/send-to-cart', (req, res) => {
+    const cart = req.body.cart;
+    const cartID = uuid();
+    const username = req.body.username;
+
+    // Turns our cart into an array with the values that we need for our database
+    const values = cart.map(item => [cartID, item.name, item.quantity, username]);
+
+    // TODO BUGS:
+        // 1. Quantity of items not being saved with each item (DONE)
+        // 2. Cart should be overwritten if they have a cart in the DB currently (DONE)
+        // 3. Data is being deleted when we sign out even if there's nothing in the cart (DONE)
+
+
+    connection.query(
+        "SELECT * FROM cart WHERE username = ?",
+        [username],
+        function (err, rows) {
+            if (err) {
+                return res.status(404).json(err);
+            }
+            let sql = "INSERT INTO cart VALUES ?";
+            // If it doesn't find the username, rows will be []
+            if (rows.length != 0 && cart.length != 0) {
+                connection.query(
+                    "DELETE FROM cart WHERE username = ?",
+                    [username],
+                    function (err) {
+                        if (err) {
+                            return res.status(404).json(err);
+                        }
+                    }
+                )
+            }
+            connection.query(
+                sql,
+                // Uses a 'bulk insert' to loop through our values and put each one in a new row
+                [values],
+                function (err, rows) {
+                    if (err) {
+                        return res.status(404).json(err);
+                    }
+                    // If it successfully put it in the cart
+                    if (rows) {
+                        console.log("rows: ", rows);
+                        return res.status(200).json("Cart successfully saved");
+                    }
+                }
+            );
+        }
+    )
+});
+
+//TODO: BUGS 
+// 4. Loading the cart even if we put in the wrong password (DONE)
+// 5. Not restoring the quantity when we reload the cart (DONE)
+app.post('/get-cart', (req, res) => {
+    const username = req.body.username;
+    console.log(username);
+
+    connection.query(
+        "SELECT product_name, product_quantity FROM cart WHERE username = ?",
+        [username],
+        function (err, rows) {
+            if (err) return res.status(404).json(err);
+            if (rows.length == 0) return res.status(404).json('No cart found');
+            return res.status(200).json(rows);
+        }
+    )
+});
+
+
 // app.listen(port);
 
 // Optionally, you can have it run a function when the server starts

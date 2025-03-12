@@ -6,9 +6,9 @@ It's extremely common for companies to use another language to host their backen
 
 - Many large companies have had these backend infrastructures for a long time, even before modern JavaScript frameworks were created.
 - Java, C#, and Go are usually more efficient than JavaScript for processing speed.
-- These backend languages typically also have built-in security features like type-checking which make them more reliable for system like banking and healthcare.
+- These backend languages typically also have built-in security features like type-checking which make them more reliable for systems like banking and healthcare.
 
-However, we're going to continue to use JavaScript for our backend, since it would be confusing to try to learn JavaScript and something like C# at the same time. Just keep in mind, that you may have to learn a bit of another language for the backend if you go to work at a large company.
+However, we're going to continue to use JavaScript for our backend, since it would be confusing to try to learn JavaScript and something like C# at the same time. Just keep in mind that you may have to learn a bit of another language for the backend if you work at a large company.
 
 ## But first, what is Express?
 
@@ -25,7 +25,7 @@ For JavaScript backends, we're going to use a library called `Express` to create
 
 ```javascript
 // Imports the Express library and sets it to a variable called 'express'
-const express = require("express");
+import express from 'express';
 
 // Creates a new instance of Express and stores it in our 'app' variable.
 const app = express();

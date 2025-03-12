@@ -35,5 +35,3 @@
   ```
 
 - Either way, once you have the connection set up it's as simple as writing the queries.
-
-https://developer.mozilla.org/en-US/docs/Glossary/SQL_Injection

@@ -7,16 +7,27 @@ The `socket.io` and `socket.io-client` packages are fantastic tools that allow y
 The [socket.io](https://www.npmjs.com/package/socket.io) package is how you would handle sockets server side. Usually, this configuration would be in it's own .conf file but it can also be directly in the server.js file if it is simple enough. As per the docs, an incredibly simple usage could be:
 
 ```javascript
-const app = require("express")();
-const server = require("http").createServer(app);
-const io = require("socket.io")(server);
+import express from 'express';
+import { createServer } from "http";
+import { Server } from "socket.io";
+const app = express();
+const server = createServer(app); // Creates an HTTP server
+const io = new Server(server, {
+    cors: {
+        origin: "http://localhost:5173",
+        methods: ["GET", "POST"]
+    }
+});
+
+app.use(cors()); // Allow frontend to connect to the server
+app.use(express.json()); // Middleware for JSON requests
 io.on("connection", () => {
   /* … */
 });
 server.listen(8080);
 ```
 
-The only difference above from usual is that you're implementing the `createServer` function on the pre-installed `http` object. This is how you expose the server to sockets. With that in mind, let's take a look at how to actually handle the sockets. The `io.on('connection', () => { /* … */ });` is where all of your logic would go. In this example it's paying attention to anytime ANYONE connects to the server. In this instance, both `connection` and `disconnect` are pre-built events. Inside the callback function you can handle emitting events to everyone, or pass it an argument and emit data to only specific people. Let's take a look at both:
+The only difference from the usual is that you're implementing the `createServer` function. This is how you expose the server to sockets. With that in mind, let's take a look at how to actually handle the sockets. The `io.on('connection', () => { /* … */ });` is where all of your logic would go. In this example it's paying attention to anytime ANYONE connects to the server. In this instance, both `connection` and `disconnect` are pre-built events. Inside the callback function you can handle emitting events to everyone, or pass it an argument and emit data to only specific people. Let's take a look at both:
 
 ```javascript
 // socket is the individual connection that was just made
@@ -40,6 +51,9 @@ io.on("connection", (socket) => {
 // This would be if you wanted something to happen whenever ANYONE did something.
 io.on("customEvent", () => {});
 ```
+
+Something important to keep in mind is that `io.emit` broadcasts an event to __everyone__ connected to the server, whereas `socket.emit` sends it to a specific person (via their own connected socket).
+
 ## socket.io-client
 
 ### Basics
@@ -47,13 +61,15 @@ io.on("customEvent", () => {});
 The [socket.io-client](https://www.npmjs.com/package/socket.io-client) package is what allows you to make connections to the server that has sockets activated. The implementation in standard JavaScript is very straightforward and in fact it can be just as easy in React. As per the docs, a standard implementation could be:
 
 ```js
-var socket = require("socket.io-client")("http://localhost:3006");
+import { io } from "socket.io-client";
+
+const socket = io("http://localhost:3006");
 socket.on("connect", function () {});
 socket.on("event", function (data) {});
 socket.on("disconnect", function () {});
 ```
 
-In the example above, the socket is connecting to the appropriate server backend and then listening for any events. You'll notice that the `event` event has an argument called `data` in its callback function. Like above, that is how you would handle and data being emitted with the event. That data could be anything you choose based off the event you're using. From there if you want to emit something to the server side it would simply be:
+In the example above, the socket is connecting to the appropriate server backend and then listening for any events. You'll notice that the `event` event has an argument called `data` in its callback function. Like above, that is how you would handle any data being emitted with the event. That data could be anything you choose based off the event you're using. From there if you want to emit something to the server side it would simply be:
 
 ```js
 socketRef.emit("event name", dataToEmit);

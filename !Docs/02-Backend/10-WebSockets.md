@@ -1,6 +1,6 @@
 # What are Web Sockets?
 
-Simply put, a socket is a form of connection that is opened between a client and a server to allow continuous updates. To think about it another way, if we take an example like a chat room, think of it like this:
+A socket is a form of connection that is opened between a client and a server to allow continuous updates. To think about it another way, if we take an example like a chat room, think of it like this:
 
 1. User calls in to the 'server' to ask for data, then leaves the line open.
 2. Other users do the same, and tell the server any new data they have. Only the server can hear that new data.

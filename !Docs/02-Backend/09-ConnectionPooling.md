@@ -5,7 +5,7 @@ There are a lot of different things to keep in mind with pooling, but what is po
 - In the Database conf file:
 
   ```javascript
-  let mysql = require("mysql");
+  import mysql from 'mysql';
   let pool = mysql.createPool({
     connectionLimit: 10,
     host: process.env.DB_HOST,
@@ -30,8 +30,6 @@ There are a lot of different things to keep in mind with pooling, but what is po
     if (connection) connection.release();
     return;
   });
-
-  module.exports = pool;
   ```
 
 - Then any route can access it with the following code:
@@ -40,7 +38,7 @@ There are a lot of different things to keep in mind with pooling, but what is po
   //At the top
   let pool = require("../mysql.conf.js"); // Or path to above code.
 
-  //Obviously the query can be anything you want it to be this is just an example.
+  //Obviously the query can be anything you want it to be, this is just an example.
   pool.query(
     "SELECT * FROM POSTS WHERE userId = ?",
     req.params.userId,
@@ -52,8 +50,8 @@ There are a lot of different things to keep in mind with pooling, but what is po
 
 With the above, rather than opening a connection, querying and then ending the connection, the `pool.query` does all of that work for you.
 
-- Ideally however you would move the queries into their own functions specific to the posts or users or whatever.
-- This might look like (in the models file for posts):
+- Ideally you would move the queries into their own functions specific to the posts or users or whatever.
+- This might look like:
   ```javascript
   getPostsById(res, userId){
       pool.query('SELECT * FROM POSTS WHERE userId = ?', userId, (err, results, field)=>{
@@ -71,7 +69,7 @@ With the above, rather than opening a connection, querying and then ending the c
   ```javascript
   //At the top import the posts functions from the file
 
-  router.get("/posts/:userId", anyMiddleWare, (req, res) => {
+  router.get("/posts/:userId", (req, res) => {
     //The below is an example but it can be whatever way you import it you'd like
     postsFunctions.getPostsById(res, req.params.userId);
   });

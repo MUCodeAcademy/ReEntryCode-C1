@@ -7,7 +7,7 @@
 - Hash the password first.
 
 ```js
-bcrypt.hashSync(password, 10);
+await argon2.hash(password);
 ```
 
 2. How do you connect to the database from the server?

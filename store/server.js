@@ -197,8 +197,8 @@ app.post('/get-cart', (req, res) => {
     )
 });
 
-
-// app.listen(port);
+// When they order something, put (order_id, cart_id, user_id) in the 'orders' table.
+// Save their shipping information in the 'shipping' table if it's not already there for that user
 
 // Optionally, you can have it run a function when the server starts
 app.listen(port, () => console.log("Server running"));

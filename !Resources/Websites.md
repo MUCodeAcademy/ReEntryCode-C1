@@ -64,7 +64,7 @@ git stash apply
 
 ## MAMP ERROR FIXING
 
-<!-- This one doesn't work if there's stuff in data directory -->
+<!-- This one doesn't work if there's stuff in data directory (i.e. there's an existing database) -->
 mysqld --initialize-insecure --basedir="C:\MAMP\bin\mysql" --datadir="C:\MAMP\db\mysql"
 
 <!-- Starts the server -->

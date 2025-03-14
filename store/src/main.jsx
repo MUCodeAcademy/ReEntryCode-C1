@@ -14,6 +14,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Products from './Pages/Products.jsx'
 import Confirmation from './Pages/Confirmation.jsx'
 import Register from './Pages/Register.jsx'
+import Messenger from './Pages/Messenger.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -22,6 +23,7 @@ createRoot(document.getElementById('root')).render(
         <ThemeProvider>
           <Router>
             <Header />
+              <Messenger />
               <Routes>
                 {/* 'exact' attribute does not exist anymore in React Router V6 oops */}
                 <Route path='/' element={<><Home /><App /></>} />

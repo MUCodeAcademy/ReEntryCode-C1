@@ -6,7 +6,7 @@ JWT stands for JSON Web Token. Similar to cookies, you can use JWTs to store a c
 
 - Authorization: The most common scenario to use JWTs. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources that are permitted with that token. Single Sign On is a feature that widely uses JWT nowadays, because of its small overhead and its ability to be easily used across different domains.
 
-- Information exchange: JSON Web Tokens are a good way of securely transmitting information between parties. Because JWTs can be signed — for example, using public/private key pairs — you can be sure the senders are who they say they are. Additionally, as the signature is calculated using the header and the payload, you can also verify that the content hasn't been tampered with.
+- Information exchange: JSON Web Tokens are a good way of securely transmitting information between parties. Because JWTs can be signed—for example, using public/private key pairs—you can be sure the senders are who they say they are. Additionally, as the signature is calculated using the header and the payload, you can also verify that the content hasn't been tampered with.
 
 ### Structure
 
@@ -68,9 +68,9 @@ Whenever the user wants to access a protected route or resource, the user agent 
 Authorization: Bearer <token>
 ```
 
-This can be, in certain cases, a stateless authorization mechanism. The server's routes will check for a valid JWT in the Authorization header, and if it's present, the user will be allowed to access protected resources. If the JWT contains the necessary data, the need to query the database for certain operations may be reduced, though this may not always be the case.
+This can be, in certain cases, a stateless authorization mechanism. The server's protected routes will check for a valid JWT in the Authorization header, and if it's present, the user will be allowed to access protected resources. If the JWT contains the necessary data, the need to query the database for certain operations may be reduced, though this may not always be the case.
 
-Note that if you send JWTs through HTTP headers, you should try to prevent them from getting too big. Some servers don't accept more than 8 KB in headers. If you are trying to embed too much information in a JWT token, like by including all the user's permissions, you'll need an alternative solution.
+Note that if you send JWT tokens through HTTP headers, you should try to prevent them from getting too big. Some servers don't accept more than 8 KB in headers. If you are trying to embed too much information in a JWT token, like by including all the user's permissions, you'll need an alternative solution.
 
 If the token is sent in the Authorization header, Cross-Origin Resource Sharing (CORS) won't be an issue as it doesn't use cookies.
 
@@ -78,8 +78,8 @@ If the token is sent in the Authorization header, Cross-Origin Resource Sharing 
 
 server.js
 ```js
-import express from 'express';
-import jwt from 'jsonwebtoken';
+const express = require('express');
+const jwt = require('jsonwebtoken');
 const app = express();
 app.use(express.json());
 
@@ -89,7 +89,7 @@ const users = { // Example users database
 
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
-    if (users[username] && users[username].password === password) { // if their login credentials are correct
+    if (users[username] && users[username].password === password) {
         const token = jwt.sign(
             { username: username },
             'secret_key', // Never expose your secret key in client-side code
@@ -103,9 +103,7 @@ app.post('/login', (req, res) => {
 
 app.listen(3000, () => console.log('Server running on http://localhost:3000'));
 ```
-
-Then, in the LoginPage.js
-
+LoginPage.js
 ```js
 import React, { useState } from 'react';
 

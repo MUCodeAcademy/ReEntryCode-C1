@@ -5,7 +5,6 @@ One of the most popular ways of collecting payment information is a service call
 You will also need API keys; these are secret keys that Stripe gives you so you can access their service. Without it, you won't be authorized to load/use Stripe.
 
 App.js
-
 ```js
 import './App.css';
 import CheckoutForm from './CheckoutForm';
@@ -36,9 +35,7 @@ function App() {
 
 export default App;
 ```
-
 CheckoutForm.js
-
 ```js
 import React, {useState} from 'react';
 import {
@@ -110,14 +107,10 @@ const CheckoutForm = () => {
 
 export default CheckoutForm;
 ```
-
 server.js
-
 ```js
-import express from "express";
-import Stripe from "stripe";
-
-const stripe = new Stripe("secret_key_from_Stripe"); // Initialize Stripe
+const stripe = require('stripe')('secret_key_from_Stripe');
+const express = require('express');
 const app = express();
 app.use(express.json());
 

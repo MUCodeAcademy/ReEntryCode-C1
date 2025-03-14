@@ -41,59 +41,46 @@ Rather than have you try to hop back and forth, here's an overview of each of th
 1. Find all Customers in the USA or Mexico ordered Alphabetically by Contact Name
 ```SQL
 SELECT * FROM Customers
-WHERE Customers.Country = "USA" OR 
-Customers.Country = "Mexico"
-ORDER BY Customers.ContactName ASC;
-
--- This is also an option
-
-SELECT * FROM Customers
-WHERE Customers.Country IN ("USA", "Mexico")
-ORDER BY Customers.ContactName ASC;
+WHERE Country = 'USA'
+OR Country = 'Mexico'
+ORDER BY ContactName ASC;
 ```
 
 2. Find all Products that cost more than 40
 ```SQL
 SELECT * FROM Products
-WHERE Products.Price > 40;
+WHERE Price > 40;
 ```
 
 3. Find all Employees born before 1960.
 ```SQL
 SELECT * FROM Employees
-WHERE Employees.BirthDate < "1960-01-01";
+WHERE BirthDate < '1960/01/01';
 ```
 
 4. Find all Products that are Beverages
 ```SQL
-
--- Combining two or more tables
--- JOIN tableName ON relatedColumn = relatedColumn
-
 SELECT * FROM Products
 JOIN Categories ON Products.CategoryID = Categories.CategoryID
-WHERE Categories.CategoryName = "Beverages";
+WHERE Categories.CategoryName = 'Beverages';
 ```
 
 5. Find all Employees who have ordered something that shipped to Spain
 ```SQL
-
--- DISTINCT does not allow duplicate results
-
-SELECT DISTINCT Employees.FirstName FROM Employees
+SELECT * FROM Employees
 JOIN Orders ON Employees.EmployeeID = Orders.EmployeeID
 JOIN Customers ON Orders.CustomerID = Customers.CustomerID
-WHERE Customers.Country = "Spain";
+WHERE Customers.Country = 'Spain';
 ```
 
 6. Find all Orders with a total price over 2000 sorted from most expensive to least expensive.
 ```SQL
-SELECT OrderDetails.OrderID, SUM(OrderDetails.Quantity * Products.Price) AS Total
-FROM OrderDetails
-JOIN Products ON OrderDetails.ProductID = Products.ProductID
--- GROUP BY means that all rows that have the same OrderID will be combined into one group
+SELECT Products.ProductName, SUM(OrderDetails.Quantity * Products.Price) AS Total
+FROM Products
+JOIN OrderDetails ON OrderDetails.ProductID = Products.ProductID
+-- GROUP BY means that it will separate and group rows according to their OrderID
 GROUP BY OrderDetails.OrderID
--- HAVING is the same as WHERE, but you can't use WHERE with functions (like SUM)
+-- HAVING is the exact same as WHERE, but you can't use WHERE with math (aggregate) functions like SUM
 HAVING Total > 2000
 ORDER BY Total DESC;
 ```

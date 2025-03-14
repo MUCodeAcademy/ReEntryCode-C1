@@ -20,7 +20,7 @@ Here's a scenario: you're on a site and you request a password reset. The websit
 - The `argon2` package is the most preferred method for hashing. It's slower than the built in `crypto` package that Node has, but it is more secure (which is why it's slower). `npm install argon2`
 - There are many more options that you can use with argon, but this is the most straight forward method.
   ```js
-  import argon2 from 'argon2';
+  const argon = require("argon2");
   const hash = await argon.hash(password);
   ```
   That's it!

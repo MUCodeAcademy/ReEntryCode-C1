@@ -39,8 +39,8 @@ To make a cookie:
 3. Give it a maxAge property. This is a time limit on how long the cookie should last (in miliseconds). As of August 2022, cookies can no longer last more than 400 days.
 
 ```js
-import express from 'express';
-import cookieParser from 'cookie-parser';
+const express = require('express');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 app.use(cookieParser()); // Enables cookie-parser

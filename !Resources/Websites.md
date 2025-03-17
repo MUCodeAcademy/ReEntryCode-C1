@@ -53,11 +53,19 @@ If it tells you to save or stash your changes first, follow the steps below:
 <!-- adds all files to commit -->
 git add *
 
-<!-- saves it to the stash so you can retrieve your code later -->
+<!-- saves your code to the stash so you can retrieve it later -->
 git stash
 
-<!-- gets new changes from github -->
+<!-- gets new changes from GitHub -->
 git pull
 
-<!-- applies whatever is in your stash -->
+<!-- retrieves everything in your stash -->
 git stash apply
+
+## MAMP ERROR FIXING
+
+<!-- This one doesn't work if there's stuff in data directory (i.e. there's an existing database) -->
+mysqld --initialize-insecure --basedir="C:\MAMP\bin\mysql" --datadir="C:\MAMP\db\mysql"
+
+<!-- Starts the server -->
+mysqld --port=3306 --datadir="C:\MAMP\db\mysql"

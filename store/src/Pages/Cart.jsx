@@ -17,7 +17,9 @@ import { useState, useEffect, useRef } from "react";
 import { useCart } from "../Context/CartContext";
 import taxRates from '../assets/taxRates.json';
 import ModalCheckout from "./ModalCheckout";
-import '../CSS/Products.css'
+import '../CSS/Products.css';
+import { saveCart } from "./Header";
+import { useUser } from "../Context/UserContext";
 
 function Cart() {
     const [subtotal, setSubtotal] = useState(0);
@@ -27,6 +29,7 @@ function Cart() {
     const [modalOpen, setModalOpen] = useState(false);
 
     const { cart, increaseQuantity, decreaseQuantity, removeFromCart, clearCart } = useCart();
+    const { currentUser } = useUser();
 
     const gridRef = useRef(null);
     const animationFrameRef = useRef(null);
@@ -52,6 +55,10 @@ function Cart() {
             setSubtotal(0);
             setTotal(0);
         }
+    }, [cart]);
+
+    useEffect(() => {
+        saveCart(currentUser, cart);
     }, [cart]);
 
     useEffect(() => {

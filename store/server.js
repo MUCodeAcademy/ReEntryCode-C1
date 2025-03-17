@@ -131,6 +131,20 @@ app.post('/send-to-cart', (req, res) => {
     const cartID = uuid();
     const username = req.body.username;
 
+    // If the cart exists and there's nothing in the cart...
+    // Delete everything from their cart in the DB and return early so that it doesn't run the rest of this app.post
+    if (cart && cart.length == 0) {
+        connection.query(
+            'DELETE FROM cart WHERE username = ?',
+            [username],
+            function (err, rows) {
+                if (err) return res.status(404).json('User not found');
+                return res.status(200).json('Cleared cart');
+            }
+        )
+        return;
+    }
+
     // Turns our cart into an array with the values that we need for our database
     const values = cart.map(item => [cartID, item.name, item.quantity, username]);
 
@@ -138,7 +152,7 @@ app.post('/send-to-cart', (req, res) => {
         // 1. Quantity of items not being saved with each item (DONE)
         // 2. Cart should be overwritten if they have a cart in the DB currently (DONE)
         // 3. Data is being deleted when we sign out even if there's nothing in the cart (DONE)
-
+        // 4. If the cart is empty, it doesn't clear the cart (DONE)
 
     connection.query(
         "SELECT * FROM cart WHERE username = ?",
@@ -199,6 +213,29 @@ app.post('/get-cart', (req, res) => {
 
 // When they order something, put (order_id, cart_id, user_id) in the 'orders' table.
 // Save their shipping information in the 'shipping' table if it's not already there for that user
+app.post('/add-order', (req, res) => {
+    const username = req.body.username;
+    const orderID = uuid();
+
+    connection.query(
+        'SELECT cart_id FROM cart WHERE username = ?',
+        [username],
+        function(err, rows) {
+            if (err) return res.status(404).json(err);
+            if (rows.length == 0) return res.status(404).json('No username found');
+            console.log("order placed: ", rows);
+            connection.query(
+                'INSERT INTO orders VALUES (?, ?, ?)',
+                [orderID, rows[0].cart_id, username],
+                function (err, rows) {
+                    if (err) return res.status(404).json(err);
+                    if (rows.length == 0) return res.status(404).json('Unsuccessful orders');
+                    return res.status(200).json('Successful order placed');
+                }
+            )
+        }
+    )
+});
 
 // Optionally, you can have it run a function when the server starts
 app.listen(port, () => console.log("Server running"));

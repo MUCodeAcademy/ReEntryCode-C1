@@ -4,6 +4,8 @@ import '../CSS/Products.css'
 import Modal from './Modal';
 import { useCart } from '../Context/CartContext';
 import { useParams } from 'react-router-dom';
+import { saveCart } from './Header';
+import { useUser } from '../Context/UserContext';
 
 function Products() {
     productList.products = productList.products.sort((a, b) => {
@@ -47,9 +49,15 @@ function Products() {
     const pageCount = Math.ceil(products.length / itemsPerPage);
 
     const { cart, increaseQuantity, decreaseQuantity, addToCart, removeFromCart } = useCart();
+    const { currentUser } = useUser();
 
     const gridRef = useRef(null);
     const animationFrameRef = useRef(null);
+
+    // Ensures that the cart state is updated, then saves the cart
+    useEffect(() => {
+      saveCart(currentUser, cart);
+    }, [cart]);
 
     useEffect(() => {
       if (!item) {
@@ -121,13 +129,13 @@ function Products() {
                                       cart.find(element => element.name === item.name).quantity <= 1 ? removeFromCart(item) : decreaseQuantity(item);
                                   }}>-</button>
                                   <p>Quantity: {cart.find(element => element.name === item.name).quantity}</p>
-                                  <button onClick={() => increaseQuantity(item)}>+</button>
-                                  <button onClick={() => removeFromCart(item)} style={{ backgroundColor: 'red' }}>Delete</button>
+                                  <button onClick={() => { increaseQuantity(item); }}>+</button>
+                                  <button onClick={() => { removeFromCart(item); }} style={{ backgroundColor: 'red' }}>Delete</button>
                               </>
                           )
                           :
                           (
-                              <button onClick={() => addToCart(item)}>Add to Cart</button>
+                              <button onClick={() => { addToCart(item); }}>Add to Cart</button>
                           )}
                           </div>
                       </div>

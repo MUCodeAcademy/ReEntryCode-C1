@@ -41,6 +41,18 @@ function ModalCheckout({ onClose, subtotal, total, shippingCost, tax }) {
         navigate('/confirmation');
     }
 
+    function order() {
+        fetch('http://localhost:3000/add-order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ username: currentUser })
+        })
+        .then(response => response.json())
+        .then(data => console.log(data));
+    }
+
     return (
         <div className='modal-overlay'>
         {/* If we're animating in, give it the modal-appear class. Otherwise, give it modal-disappear */}

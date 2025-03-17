@@ -6,6 +6,19 @@ import productList from '../assets/products.json';
 import { useUser } from '../Context/UserContext';
 import { useTheme } from '../Context/ThemeContext';
 
+export function saveCart(currentUser, cart) {
+    fetch('http://localhost:3000/send-to-cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username: currentUser, cart: cart })
+    })
+    .then(response => response.json())
+    // .then(() => clearCart())
+    .catch(error => console.error(error));
+}
+
 function Header() {
     const ads = [1, 2, 3, 4, 5];
     const [isFocused, setIsFocused] = useState(false);
@@ -70,19 +83,6 @@ function Header() {
                 alert(data);
             }
         })
-        .catch(error => console.error(error));
-    }
-
-    function saveCart() {
-        fetch('http://localhost:3000/send-to-cart', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ username: username, cart: cart })
-        })
-        .then(response => response.json())
-        .then(() => clearCart())
         .catch(error => console.error(error));
     }
 
@@ -324,7 +324,7 @@ function Header() {
                 <div className='dropdown'>
                     <button className='dropbtn'>{currentUser} &#9660;</button>
                     <div className='dropdown-content'>
-                        <button onClick={() => { saveCart(); clearUser() }}>Logout</button>
+                        <button onClick={() => { saveCart(); clearUser(); clearCart() }}>Logout</button>
                     </div>
                 </div>
             ) : (

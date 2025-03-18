@@ -1,5 +1,5 @@
 import { useState } from "react"
-import '../Styles/Dice.css';
+import '../StylesLuce/DiceLuce.css';
 
 function Dice() {
     const [number, setNumber] = useState('Roll the die');

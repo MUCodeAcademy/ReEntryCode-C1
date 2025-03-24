@@ -1,0 +1,23 @@
+.light-container > div {
+    border-radius: 50%;
+    border: 2px solid black;
+    height: 100px;
+    width: 100px;
+    opacity: .5;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.light-container > div.active {
+    opacity: 1;
+}

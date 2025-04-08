@@ -8,6 +8,7 @@
 - ES7+ React/Redux/React-Native Snippets (dsznajder)
 - GitHub Pull Requests (GitHub)
 - GitHub Repositories (GitHub)
+- GitHub Copilot (GitHub)
 - Itellicode (Microsoft)
 - JavaScript (ES6) code snippets (charalampos karypidis)
 - JavaScript Debugger (Nightly) (Microsoft)

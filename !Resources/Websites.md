@@ -69,3 +69,9 @@ mysqld --initialize-insecure --basedir="C:\MAMP\bin\mysql" --datadir="C:\MAMP\db
 
 <!-- Starts the server -->
 mysqld --port=3306 --datadir="C:\MAMP\db\mysql"
+
+open command prompt (search cmd in search bar)
+cd ..
+cd ..
+cd MAMP\bin\mysql\bin
+mysqld --port=3306 --datadir="C:\MAMP\db\mysql"

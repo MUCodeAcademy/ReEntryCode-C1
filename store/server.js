@@ -71,7 +71,7 @@ app.post('/register', async (req, res) => {
     );
 
     // Send the response back as a JSON
-    res.json(`Register Successful`);
+    res.json({ status: 200, message: 'Register Successful' });
 });
 
 app.post('/check-username', (req, res) => {
@@ -241,3 +241,5 @@ app.post('/add-order', (req, res) => {
 app.listen(port, () => console.log("Server running"));
 
 // If you want to stop the server once it's running, click in the terminal and press CTRL + C
+
+export default app;

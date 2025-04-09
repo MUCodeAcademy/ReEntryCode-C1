@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "nodemon server"
+    "server": "nodemon src/Luce/serverLuce"
   },
   "dependencies": {
     "argon2": "^0.41.1",

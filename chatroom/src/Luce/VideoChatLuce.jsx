@@ -164,16 +164,12 @@ function VideoChat({ fromUser, toUser, socket }) {
     }
 
     function endCall() {
-        if (pcRef.current) {
-            // pcRef.current.close();
-        }
-        
         setCallActive(false);
-        remoteVideoRef.current.srcObject.getTracks().forEach(track => track.stop());
+        remoteVideoRef.current.srcObject.getTracks().forEach(track => track.stop()); // Stop the video/audio
 
         const otherUser = toUser || (incomingCallData && incomingCallData.from);
 
-        socket.emit('end-call', { from: fromUser, to: otherUser });
+        socket.emit('end-call', { from: fromUser, to: otherUser }); // End the call for us OR the other user
         setIncomingCallData(null);
     }
 

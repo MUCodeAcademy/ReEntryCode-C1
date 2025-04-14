@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../App.css';
 import useSocket from './useSocketLuce';
+import VideoChat from './VideoChatLuce';
 
 function App() {
   const [username, setUsername] = useState('');
@@ -101,6 +102,7 @@ function App() {
             <div key={index}>{item}</div>
           ))}
       </div>
+      <VideoChat />
     </>
   )
 }

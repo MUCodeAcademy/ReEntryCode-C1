@@ -1,0 +1,9 @@
+# This is the requirements.txt file for the Penny Bot.
+# It's used to install the necessary libraries for the bot.
+# You can install the libraries by running 'pip install -r requirements.txt' in the terminal.
+botbuilder-integration-aiohttp>=4.14.0
+uvicorn
+openai
+python-dotenv
+fastapi
+google-cloud-texttospeech

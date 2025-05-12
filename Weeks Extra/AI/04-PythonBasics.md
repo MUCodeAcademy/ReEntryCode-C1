@@ -11,7 +11,7 @@ We're going to go over the basic syntax rules of Python, since Python is commonl
 
 ## Python vs. JavaScript: Syntax Basics
 
-If you want a slightly longer overview, you can check out the [04-Python.md](../Languages/04-Python.md) file in the Languages folder. Here are the main syntax rules to remember:
+If you want a slightly longer overview, you can check out the [04-Python.md](../../AdditionalTopics/Languages/04-Python.md) file in the Languages folder. Here are the main syntax rules to remember:
 
 1. Don't use `let`, `var`, or `const` to make variables:
 

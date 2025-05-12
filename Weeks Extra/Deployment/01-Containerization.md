@@ -1,0 +1,3 @@
+# Containerization
+
+A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. This allows for much better cross platform functionality and allows the application to run the exact same regardless of server or computer architecture. For full-stack applications, we're going to need three containers: one for the frontend, one for the backend, and one for the database.

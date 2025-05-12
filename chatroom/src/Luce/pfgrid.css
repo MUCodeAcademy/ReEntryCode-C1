@@ -1,0 +1,66 @@
+/* COLORS */
+
+/* dark green #1F2605 */
+/* less dark green #1F6521 */
+/* medium green #53900F */
+/* ugly green #A4A71E */
+/* light green-yellow #D6CE15 */
+
+/* PATHFINDER GRID */
+
+.grid {
+    text-align: center;
+}
+
+.node {
+    width: 28px;
+    height: 27px;
+    border: 1.5px solid black;
+    display: inline-block;
+    border-color: black;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.3),
+        rgba(255, 255, 255, 0.3)
+    );
+}
+
+.node-dark {
+    width: 28px;
+    height: 27px;
+    border: 1.5px solid black;
+    display: inline-block;
+    border-color: black;
+}
+
+.grid-top {
+    margin: 20px;
+}
+
+.grid-row {
+    margin-bottom: -4px;
+}
+
+/* END PATFINDER GRID */
+
+/* POINTS (START, END, OBSTACLE) */
+
+.start-point {
+    background-color: green;
+    content: 'S';
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+.end-point {
+    background-color: red;
+    content: 'E';
+    font-size: 2rem;
+    font-family: sans-serif;
+}
+
+.obstacle {
+    background-color: black;
+}
+
+/* END POINTS */

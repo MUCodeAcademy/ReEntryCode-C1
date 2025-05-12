@@ -1,0 +1,87 @@
+* {
+    font-family: "Satoshi 400";
+}
+
+body {
+    background-color: #FFDEDB;
+}
+
+/* body {
+    background: linear-gradient(285deg, #12b8b7, 
+    #188f2a, #b5d815, #9715d8, #d81515, #d815ae, 
+    #4ea5d5, #ffe300, #3c78dd, #d5e4c3);
+    background-size: 2000% 2000%;
+
+    -webkit-animation: AnimationName 50s alternate-reverse infinite;
+    -moz-animation: AnimationName 50s ease-in infinite;
+    animation: AnimationName 45s ease-in-out infinite;
+} */
+
+/* @-webkit-keyframes AnimationName {
+    20%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@-moz-keyframes AnimationName {
+    80%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:10% 0%}
+    50%{background-position:91% 100%}
+    100%{background-position:10% 0%}
+} */
+
+.h1 {
+    text-align: center;
+    font-family: "Satoshi 400";
+    font-size: 3rem;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid red;
+}
+
+.info-wrapper {
+    display: block;
+}
+
+.info {
+    font-family: "Satoshi 400";
+    font-size: 1.5rem;
+    margin: auto;
+    text-align: center;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: 'tnum';
+}
+
+.click-btn-wrapper {
+    display: flex;
+    margin-top: 1em
+}
+
+.click-btn {
+    height: 500px;
+    width: 700px;
+    border-radius: 15px;
+    font-family: "Satoshi 400";
+    font-size: 4rem;
+    margin: auto;
+    background-color: #f6f6f6;
+}
+
+.btn-wrapper{
+    display: flex;
+}
+
+.reset-btn {
+    font-family: "Satoshi 400";
+    height: 40px;
+    width: 100px;
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 2em;
+    font-size: 1rem;
+    background-color: #f6f6f6;
+}
